@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Andreas Müller — native apps &amp; developer tools in Swift and Rust</title>
+<meta name="description" content="Andreas Müller — Rust / Java / JavaScript developer. Native macOS &amp; iPadOS apps over memory-safe Rust cores, PostgreSQL &amp; SSH tooling, and cargo/CI developer tools." />
+<meta name="author" content="Andreas Müller" />
+<link rel="icon" href="https://avatars.githubusercontent.com/u/309559?v=4" />
+<meta name="theme-color" content="#070a10" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Andreas Müller — native apps &amp; developer tools in Swift and Rust" />
+<meta property="og:description" content="Native macOS &amp; iPadOS apps over memory-safe Rust cores, PostgreSQL &amp; SSH tooling, and cargo/CI developer tools." />
+<meta property="og:url" content="https://asmuelle.github.io/" />
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/309559?v=4" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/309559?v=4" />
+
+<style>
+  :root {
+    --bg:#070a10; --panel:#0e1420; --line:rgba(150,180,220,.12); --line-strong:rgba(150,180,220,.22);
+    --text:#e9eef7; --muted:#9aa6bb; --dim:#6b768c;
+    --blue:#4c8dff; --cyan:#2ad4e6; --teal:#34d39e;
+    --grad:linear-gradient(100deg,#4c8dff,#2ad4e6 48%,#34d39e); --glow:0 0 40px rgba(42,212,230,.35);
+    --sans:system-ui,-apple-system,"SF Pro Display","Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --r:14px; --maxw:1080px; --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{box-sizing:border-box;}
+  html,body{max-width:100%;overflow-x:clip;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:
+    radial-gradient(820px 560px at 80% -10%,rgba(42,212,230,.14),transparent 60%),
+    radial-gradient(720px 560px at 6% 2%,rgba(76,141,255,.12),transparent 58%),
+    radial-gradient(680px 680px at 60% 112%,rgba(52,211,158,.08),transparent 60%);}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;-webkit-mask-image:radial-gradient(circle at 50% 12%,black,transparent 72%);mask-image:radial-gradient(circle at 50% 12%,black,transparent 72%);}
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(18px,4vw,34px);}
+  .skip{position:absolute;left:-999px;}.skip:focus{left:16px;top:16px;background:var(--panel);padding:10px 14px;border-radius:8px;z-index:99;}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.9rem;font-weight:600;
+    padding:9px 16px;border-radius:999px;border:1px solid var(--line-strong);color:var(--text);background:rgba(255,255,255,.03);
+    transition:transform .18s var(--ease),border-color .2s,box-shadow .2s;cursor:pointer;}
+  .btn:hover{transform:translateY(-1px);border-color:var(--cyan);box-shadow:var(--glow);}
+  .btn.primary{background:var(--grad);color:#04121a;border:none;font-weight:700;}
+
+  /* hero */
+  header{padding:clamp(46px,7vw,92px) 0 clamp(28px,4vw,52px);}
+  .hero{display:flex;gap:clamp(22px,4vw,40px);align-items:center;flex-wrap:wrap;}
+  .avatar{width:118px;height:118px;border-radius:26px;border:1px solid var(--line-strong);box-shadow:var(--glow);flex:none;}
+  .hero .who{min-width:0;flex:1;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.76rem;letter-spacing:.02em;
+    color:var(--cyan);border:1px solid var(--line-strong);padding:5px 11px;border-radius:999px;background:rgba(42,212,230,.06);margin-bottom:16px;}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);}
+  h1{font-size:clamp(2rem,1rem+4.4vw,3.4rem);line-height:1.04;letter-spacing:-.03em;font-weight:720;margin:0 0 14px;overflow-wrap:break-word;}
+  h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lede{font-size:clamp(1rem,.95rem+.4vw,1.18rem);color:var(--muted);max-width:54ch;margin:0 0 20px;}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:.82rem;color:var(--dim);margin-bottom:20px;}
+  .meta b{color:var(--muted);font-weight:500;}
+  .links{display:flex;gap:10px;flex-wrap:wrap;}
+
+  section{padding:clamp(40px,5vw,64px) 0;}
+  .head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px;}
+  .kicker{font-family:var(--mono);font-size:.78rem;color:var(--cyan);letter-spacing:.05em;text-transform:uppercase;margin:0;}
+  h2{font-size:clamp(1.5rem,1.1rem+1.6vw,2.2rem);letter-spacing:-.025em;font-weight:700;margin:0;}
+  .note{font-family:var(--mono);font-size:.76rem;color:var(--dim);}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  @media (max-width:680px){.grid{grid-template-columns:1fr;}}
+  .repo{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);padding:20px;
+    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008));position:relative;overflow:hidden;
+    transition:transform .2s var(--ease),border-color .2s,box-shadow .2s;}
+  .repo:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:0 18px 40px -24px rgba(0,0,0,.8);}
+  .repo::after{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:var(--grad);opacity:0;transition:opacity .25s;}
+  .repo:hover::after{opacity:.85;}
+  .repo .top{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+  .repo .nm{font-size:1.12rem;font-weight:650;letter-spacing:-.015em;}
+  .repo.feat .nm{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .repo .pin{margin-left:auto;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);border:1px solid var(--line);border-radius:999px;padding:2px 8px;}
+  .repo p{color:var(--muted);font-size:.92rem;margin:0 0 14px;flex:1;}
+  .repo .foot{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:.76rem;color:var(--dim);}
+  .lang{display:inline-flex;align-items:center;gap:6px;}
+  .lang i{width:9px;height:9px;border-radius:50%;display:block;background:var(--cyan);}
+  .repo .chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 14px;}
+  .chip{font-family:var(--mono);font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px;transition:border-color .2s,color .2s;}
+  a.chip:hover{border-color:var(--cyan);color:var(--text);}
+  .acts{display:flex;gap:10px;font-family:var(--sans);font-size:.84rem;font-weight:600;margin-top:auto;}
+  .acts a{color:var(--cyan);}.acts a:hover{text-decoration:underline;}
+
+  #live-status{font-family:var(--mono);font-size:.85rem;color:var(--dim);}
+  footer{border-top:1px solid var(--line);padding:30px 0 56px;color:var(--dim);font-size:.86rem;margin-top:24px;}
+  .foot-row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;}
+  .foot-row .sp{flex:1;}
+  footer a{color:var(--muted);}footer a:hover{color:var(--text);}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  /* JS off → never hide content. Reduced motion → show without animating. */
+  .no-js .reveal{opacity:1;transform:none;transition:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+<a class="skip" href="#projects">Skip to projects</a>
+
+<header>
+  <div class="wrap hero">
+    <img class="avatar" src="https://avatars.githubusercontent.com/u/309559?v=4" alt="Andreas Müller" width="118" height="118" />
+    <div class="who">
+      <span class="eyebrow"><span class="dot"></span> Rust · Swift · TypeScript</span>
+      <h1>Andreas&nbsp;Müller — I build <span class="grad">native apps and the tools that ship them.</span></h1>
+      <p class="lede">Native macOS &amp; iPadOS apps over memory-safe Rust cores (bridged with UniFFI), deep PostgreSQL &amp; SSH tooling, and a suite of cargo/CI developer tools.</p>
+      <div class="meta">
+        <span><b>Rust / Java / JavaScript</b> developer @ kWIQly</span>
+        <span>📍 Lake Constance</span>
+        <span>↗ <b>kwiqly.com</b></span>
+      </div>
+      <div class="links">
+        <a class="btn primary" href="https://github.com/asmuelle" rel="noopener">GitHub profile ↗</a>
+        <a class="btn" href="#projects">Jump to projects</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Featured -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">Featured</p>
+        <h2>Selected work</h2>
+      </div>
+      <div class="grid">
+        <article class="repo feat reveal">
+          <div class="top"><span class="nm">pgAgent</span><span class="pin">Flagship</span></div>
+          <p>A native macOS &amp; iPadOS workspace for PostgreSQL &amp; SSH — a routine editor that out-engineers the big IDEs, transactional-safe DDL, an ERD, dual-pane SFTP and on-device AI.</p>
+          <div class="chips"><span class="chip">SwiftUI + AppKit</span><span class="chip">Rust core</span><span class="chip">UniFFI</span></div>
+          <div class="acts"><a href="https://asmuelle.github.io/agent-postgres/" rel="noopener">Live site →</a><a href="https://github.com/asmuelle/agent-postgres" rel="noopener">Code →</a></div>
+        </article>
+
+        <article class="repo feat reveal">
+          <div class="top"><span class="nm">agent-ssh</span></div>
+          <p>Native macOS &amp; iPadOS SSH workspace — terminal, SFTP, PostgreSQL, monitoring and network tools over a memory-safe Rust core bridged to Swift.</p>
+          <div class="chips"><span class="chip">SwiftUI</span><span class="chip">SwiftTerm</span><span class="chip">Rust</span></div>
+          <div class="acts"><a href="https://github.com/asmuelle/agent-ssh" rel="noopener">Code →</a></div>
+        </article>
+
+        <article class="repo feat reveal">
+          <div class="top"><span class="nm">ssh-commander-core</span></div>
+          <p>The async Rust domain layer behind the apps — SSH, SFTP, FTP/FTPS, PostgreSQL and connection management, published to crates.io.</p>
+          <div class="chips"><span class="chip">Rust</span><span class="chip">async</span><span class="chip">crates.io</span></div>
+          <div class="acts"><a href="https://github.com/asmuelle/ssh-commander-core" rel="noopener">Code →</a></div>
+        </article>
+
+        <article class="repo feat reveal">
+          <div class="top"><span class="nm">r-shell</span></div>
+          <p>A lightweight, open-source SSH/SFTP/FTP client in Rust &amp; Tauri 2 — split terminals, SFTP, GPU monitoring. ~34 MB RAM, installer under 10 MB.</p>
+          <div class="chips"><span class="chip">Rust</span><span class="chip">Tauri 2</span><span class="chip">cross-platform</span></div>
+          <div class="acts"><a href="https://github.com/asmuelle/r-shell" rel="noopener">Code →</a></div>
+        </article>
+
+        <article class="repo feat reveal">
+          <div class="top"><span class="nm">cargo-impact</span></div>
+          <p>Dependency-impact analysis for Rust — SARIF code-scanning and sticky PR comments to gate risky changes, with a ready-made GitHub Action.</p>
+          <div class="chips"><span class="chip">Rust</span><span class="chip">GitHub Action</span><span class="chip">SARIF</span></div>
+          <div class="acts"><a href="https://github.com/asmuelle/cargo-impact" rel="noopener">Code →</a><a href="https://github.com/asmuelle/cargo-impact-action" rel="noopener">Action →</a></div>
+        </article>
+
+        <article class="repo feat reveal">
+          <div class="top"><span class="nm">cargo · CI tooling</span></div>
+          <p>A growing set of tools for safer, AI-assisted Rust development — diff risk scoring, spec-drift detection, build context, and more.</p>
+          <div class="chips">
+            <a class="chip" href="https://github.com/asmuelle/diff-risk" rel="noopener">diff-risk</a>
+            <a class="chip" href="https://github.com/asmuelle/spec-drift" rel="noopener">spec-drift</a>
+            <a class="chip" href="https://github.com/asmuelle/cargo-context" rel="noopener">cargo-context</a>
+            <a class="chip" href="https://github.com/asmuelle/ai-tools-core" rel="noopener">ai-tools-core</a>
+          </div>
+          <div class="acts"><a href="https://github.com/asmuelle?tab=repositories&q=cargo&type=source" rel="noopener">All cargo tools →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live grid -->
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">More projects</p>
+        <h2>Everything else I own</h2>
+        <span class="note">live from GitHub · forks hidden</span>
+      </div>
+      <p id="live-status">Loading projects…</p>
+      <div class="grid" id="live-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© <span id="yr"></span> Andreas Müller</span>
+    <span class="sp"></span>
+    <a href="https://github.com/asmuelle" rel="noopener">github.com/asmuelle</a>
+    <span>·</span>
+    <a href="https://kwiqly.com" rel="noopener">kwiqly.com</a>
+  </div>
+</footer>
+
+<script>
+  // Enable JS-only styling (reveal animations); without this, .no-js keeps
+  // every section visible even if this script never runs.
+  document.documentElement.classList.remove("no-js");
+  document.documentElement.classList.add("js");
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Repos already shown in the Featured section — kept out of the live grid.
+  var FEATURED = ["agent-postgres","agent-ssh","ssh-commander-core","r-shell",
+    "cargo-impact","cargo-impact-action","diff-risk","spec-drift","cargo-context",
+    "ai-tools-core","cargo-vibecode"];
+
+  var LANG_COLORS = {
+    Swift:"#f05138", Rust:"#dea584", TypeScript:"#3178c6", JavaScript:"#f1e05a",
+    Python:"#3572A5", Java:"#b07219", Kotlin:"#A97BFF", "C++":"#f34b7d", C:"#555555",
+    Go:"#00ADD8", HTML:"#e34c26", CSS:"#563d7c", Shell:"#89e051", Ruby:"#701516",
+    Dart:"#00B4AB", "Jupyter Notebook":"#DA5B0B", Dockerfile:"#384d54", Vue:"#41b883"
+  };
+
+  function esc(s){ var d=document.createElement("div"); d.textContent=s==null?"":s; return d.innerHTML; }
+  function ago(iso){
+    var d=(Date.now()-new Date(iso).getTime())/86400000;
+    if(d<1) return "today"; if(d<2) return "yesterday";
+    if(d<31) return Math.round(d)+"d ago";
+    if(d<365) return Math.round(d/30)+"mo ago";
+    return Math.round(d/365)+"y ago";
+  }
+  function card(r){
+    var lang = r.language ? '<span class="lang"><i style="background:'+(LANG_COLORS[r.language]||"#8aa")+'"></i>'+esc(r.language)+'</span>' : "";
+    var stars = r.stargazers_count>0 ? '<span>★ '+r.stargazers_count+'</span>' : "";
+    return '<article class="repo">'
+      + '<div class="top"><span class="nm">'+esc(r.name)+'</span></div>'
+      + '<p>'+(r.description?esc(r.description):"<em style=\\"color:var(--dim)\\">No description.</em>")+'</p>'
+      + '<div class="foot">'+lang+stars+'<span>updated '+ago(r.pushed_at)+'</span></div>'
+      + '<div class="acts" style="margin-top:14px"><a href="'+esc(r.html_url)+'" rel="noopener">Code →</a></div>'
+      + '</article>';
+  }
+  function fallback(){
+    document.getElementById("live-status").innerHTML =
+      'Couldn\\'t load the live list right now — <a style="color:var(--cyan)" href="https://github.com/asmuelle?tab=repositories&type=source" rel="noopener">browse all projects on GitHub ↗</a>';
+  }
+
+  fetch("https://api.github.com/users/asmuelle/repos?per_page=100&sort=pushed&type=owner",
+        { headers: { "Accept": "application/vnd.github+json" } })
+    .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
+    .then(function(repos){
+      if(!Array.isArray(repos)) throw new Error("bad payload");
+      var list = repos.filter(function(r){
+        return !r.fork && !r.archived && !r.disabled && FEATURED.indexOf(r.name)===-1;
+      }).sort(function(a,b){
+        return (b.stargazers_count-a.stargazers_count) || (new Date(b.pushed_at)-new Date(a.pushed_at));
+      });
+      var status = document.getElementById("live-status");
+      var grid = document.getElementById("live-grid");
+      if(!list.length){ status.textContent="No additional public projects."; return; }
+      status.style.display="none";
+      grid.innerHTML = list.map(card).join("");
+    })
+    .catch(fallback);
+
+  (function(){
+    var els=document.querySelectorAll(".reveal");
+    if(!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches){
+      els.forEach(function(e){e.classList.add("in");}); return;
+    }
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});
+    els.forEach(function(e){io.observe(e);});
+    // Backstop: if the observer never delivers (edge cases), reveal everything
+    // so content can't get stuck hidden.
+    setTimeout(function(){els.forEach(function(e){e.classList.add("in");});}, 2000);
+  })();
+</script>
+</body>
+</html>
