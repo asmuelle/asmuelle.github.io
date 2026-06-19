@@ -232,8 +232,8 @@
     </div>
   </section>
 
-  <!-- Live grid -->
-  <section>
+  <!-- Live grid — JS hides this whole section when there's nothing to show -->
+  <section id="more">
     <div class="wrap">
       <div class="head">
         <p class="kicker">More projects</p>
@@ -301,20 +301,22 @@
       "Couldn't load the live list right now — <a style=\"color:var(--cyan)\" href=\"https://github.com/asmuelle?tab=repositories&type=source\" rel=\"noopener\">browse all projects on GitHub ↗</a>";
   }
 
+  // Nothing to show → drop the whole section so the page ends cleanly on the
+  // featured cards. It reappears automatically once a qualifying repo exists.
+  function hideMore(){ var s=document.getElementById("more"); if(s) s.style.display="none"; }
+
   function render(list){
-    var status = document.getElementById("live-status");
-    var grid = document.getElementById("live-grid");
-    if(!list.length){ status.textContent="No additional public projects."; return; }
-    status.style.display="none";
-    grid.innerHTML = list.map(card).join("");
+    if(!list.length){ hideMore(); return; }
+    document.getElementById("live-status").style.display="none";
+    document.getElementById("live-grid").innerHTML = list.map(card).join("");
   }
 
   // 1) Prefer the static, Action-generated list — fast, no API rate limit, already
-  //    filtered/sorted/curated. 2) Fall back to the live API (60 req/hr/IP).
-  //    3) Fall back to a plain GitHub link.
+  //    filtered/sorted/curated. An empty array is authoritative: hide the section.
+  // 2) Fall back to the live API (60 req/hr/IP). 3) Fall back to a plain GitHub link.
   fetch("repos.json", { cache: "no-cache" })
     .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
-    .then(function(list){ if(!Array.isArray(list) || !list.length) throw new Error("empty"); render(list); })
+    .then(function(list){ if(!Array.isArray(list)) throw new Error("bad payload"); render(list); })
     .catch(function(){
       fetch("https://api.github.com/users/asmuelle/repos?per_page=100&sort=pushed&type=owner",
             { headers: { "Accept": "application/vnd.github+json" } })
