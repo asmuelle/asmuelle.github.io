@@ -6,15 +6,42 @@
 <title>Andreas Müller — native apps &amp; developer tools in Swift and Rust</title>
 <meta name="description" content="Andreas Müller — Rust / Java / JavaScript developer. Native macOS &amp; iPadOS apps over memory-safe Rust cores, PostgreSQL &amp; SSH tooling, and cargo/CI developer tools." />
 <meta name="author" content="Andreas Müller" />
+<link rel="canonical" href="https://asmuelle.github.io/" />
 <link rel="icon" href="https://avatars.githubusercontent.com/u/309559?v=4" />
+<link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/309559?v=4" />
 <meta name="theme-color" content="#070a10" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Andreas Müller — native apps &amp; developer tools in Swift and Rust" />
-<meta property="og:description" content="Native macOS &amp; iPadOS apps over memory-safe Rust cores, PostgreSQL &amp; SSH tooling, and cargo/CI developer tools." />
+<meta property="og:description" content="Native macOS &amp; iPadOS apps over memory-safe Rust cores, PostgreSQL &amp; SSH tooling, and cargo/CI developer tools. Available for consulting." />
 <meta property="og:url" content="https://asmuelle.github.io/" />
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/309559?v=4" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/309559?v=4" />
+<meta property="og:image" content="https://asmuelle.github.io/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Andreas Müller — I build native apps and the tools that ship them." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Andreas Müller — native apps &amp; developer tools in Swift and Rust" />
+<meta name="twitter:description" content="Native macOS &amp; iPadOS apps over memory-safe Rust cores, PostgreSQL &amp; SSH tooling, and cargo/CI developer tools." />
+<meta name="twitter:image" content="https://asmuelle.github.io/og.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Andreas Müller",
+  "url": "https://asmuelle.github.io/",
+  "image": "https://avatars.githubusercontent.com/u/309559?v=4",
+  "jobTitle": "Rust / Java / JavaScript Developer",
+  "description": "Native macOS & iPadOS apps over memory-safe Rust cores, PostgreSQL & SSH tooling, and cargo/CI developer tools. Available for consulting.",
+  "knowsAbout": ["Rust", "Swift", "TypeScript", "Java", "PostgreSQL", "macOS app development", "Developer tooling"],
+  "worksFor": { "@type": "Organization", "name": "kWIQly", "url": "https://kwiqly.com" },
+  "address": { "@type": "PostalAddress", "addressRegion": "Lake Constance" },
+  "sameAs": [
+    "https://github.com/asmuelle",
+    "https://crates.io/users/asmuelle",
+    "https://kwiqly.com"
+  ]
+}
+</script>
 
 <style>
   :root {
@@ -62,6 +89,18 @@
   .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--mono);font-size:.82rem;color:var(--dim);margin-bottom:20px;}
   .meta b{color:var(--muted);font-weight:500;}
   .links{display:flex;gap:10px;flex-wrap:wrap;}
+
+  .avail{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.82rem;color:var(--teal);
+    border:1px solid rgba(52,211,158,.35);background:rgba(52,211,158,.07);padding:6px 13px;border-radius:999px;margin-bottom:18px;}
+  .avail .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal);
+    animation:pulse 2.4s var(--ease) infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  @media (prefers-reduced-motion:reduce){.avail .pulse{animation:none;}}
+  /* proof strip — honest signals, no vanity star counts */
+  .proof{display:flex;flex-wrap:wrap;gap:10px 14px;margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);}
+  .proof span{font-family:var(--mono);font-size:.8rem;color:var(--muted);display:inline-flex;align-items:center;gap:7px;}
+  .proof span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--cyan);opacity:.8;}
+  .proof b{color:var(--text);font-weight:600;}
 
   section{padding:clamp(40px,5vw,64px) 0;}
   .head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px;}
@@ -111,17 +150,24 @@
   <div class="wrap hero">
     <img class="avatar" src="https://avatars.githubusercontent.com/u/309559?v=4" alt="Andreas Müller" width="118" height="118" />
     <div class="who">
-      <span class="eyebrow"><span class="dot"></span> Rust · Swift · TypeScript</span>
+      <span class="avail"><span class="pulse"></span> Available for consulting — Rust &amp; native-app engineering</span>
       <h1>Andreas&nbsp;Müller — I build <span class="grad">native apps and the tools that ship them.</span></h1>
-      <p class="lede">Native macOS &amp; iPadOS apps over memory-safe Rust cores (bridged with UniFFI), deep PostgreSQL &amp; SSH tooling, and a suite of cargo/CI developer tools.</p>
+      <p class="lede">I help teams ship native macOS &amp; iPadOS apps over memory-safe Rust cores (bridged with UniFFI), deep PostgreSQL &amp; SSH tooling, and cargo/CI developer tools that make Rust development safer.</p>
       <div class="meta">
         <span><b>Rust / Java / JavaScript</b> developer @ kWIQly</span>
         <span>📍 Lake Constance</span>
         <span>↗ <b>kwiqly.com</b></span>
       </div>
       <div class="links">
-        <a class="btn primary" href="https://github.com/asmuelle" rel="noopener">GitHub profile ↗</a>
-        <a class="btn" href="#projects">Jump to projects</a>
+        <a class="btn primary" href="mailto:herban.mueller@gmail.com?subject=Consulting%20enquiry">Work with me →</a>
+        <a class="btn" href="https://www.linkedin.com/in/andreas-müller-1692989" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/asmuelle" rel="noopener">GitHub ↗</a>
+      </div>
+      <div class="proof">
+        <span>On GitHub since <b>2010</b></span>
+        <span>Published on <b>crates.io</b></span>
+        <span><b>Rust</b> · Swift · TypeScript · Java</span>
+        <span>Native <b>macOS &amp; iPadOS</b></span>
       </div>
     </div>
   </div>
@@ -191,11 +237,14 @@
     <div class="wrap">
       <div class="head">
         <p class="kicker">More projects</p>
-        <h2>Everything else I own</h2>
-        <span class="note">live from GitHub · forks hidden</span>
+        <h2>Also on GitHub</h2>
+        <span class="note">recently active · forks hidden</span>
       </div>
       <p id="live-status">Loading projects…</p>
       <div class="grid" id="live-grid"></div>
+      <p style="margin-top:22px;font-family:var(--mono);font-size:.85rem;">
+        <a style="color:var(--cyan)" href="https://github.com/asmuelle?tab=repositories&type=source" rel="noopener">Browse all repositories on GitHub →</a>
+      </p>
     </div>
   </section>
 </main>
@@ -242,33 +291,46 @@
     var stars = r.stargazers_count>0 ? '<span>★ '+r.stargazers_count+'</span>' : "";
     return '<article class="repo">'
       + '<div class="top"><span class="nm">'+esc(r.name)+'</span></div>'
-      + '<p>'+(r.description?esc(r.description):"<em style=\\"color:var(--dim)\\">No description.</em>")+'</p>'
+      + '<p>'+(r.description?esc(r.description):'<em style="color:var(--dim)">No description.</em>')+'</p>'
       + '<div class="foot">'+lang+stars+'<span>updated '+ago(r.pushed_at)+'</span></div>'
       + '<div class="acts" style="margin-top:14px"><a href="'+esc(r.html_url)+'" rel="noopener">Code →</a></div>'
       + '</article>';
   }
   function fallback(){
     document.getElementById("live-status").innerHTML =
-      'Couldn\\'t load the live list right now — <a style="color:var(--cyan)" href="https://github.com/asmuelle?tab=repositories&type=source" rel="noopener">browse all projects on GitHub ↗</a>';
+      "Couldn't load the live list right now — <a style=\"color:var(--cyan)\" href=\"https://github.com/asmuelle?tab=repositories&type=source\" rel=\"noopener\">browse all projects on GitHub ↗</a>";
   }
 
-  fetch("https://api.github.com/users/asmuelle/repos?per_page=100&sort=pushed&type=owner",
-        { headers: { "Accept": "application/vnd.github+json" } })
+  function render(list){
+    var status = document.getElementById("live-status");
+    var grid = document.getElementById("live-grid");
+    if(!list.length){ status.textContent="No additional public projects."; return; }
+    status.style.display="none";
+    grid.innerHTML = list.map(card).join("");
+  }
+
+  // 1) Prefer the static, Action-generated list — fast, no API rate limit, already
+  //    filtered/sorted/curated. 2) Fall back to the live API (60 req/hr/IP).
+  //    3) Fall back to a plain GitHub link.
+  fetch("repos.json", { cache: "no-cache" })
     .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
-    .then(function(repos){
-      if(!Array.isArray(repos)) throw new Error("bad payload");
-      var list = repos.filter(function(r){
-        return !r.fork && !r.archived && !r.disabled && FEATURED.indexOf(r.name)===-1;
-      }).sort(function(a,b){
-        return (b.stargazers_count-a.stargazers_count) || (new Date(b.pushed_at)-new Date(a.pushed_at));
-      });
-      var status = document.getElementById("live-status");
-      var grid = document.getElementById("live-grid");
-      if(!list.length){ status.textContent="No additional public projects."; return; }
-      status.style.display="none";
-      grid.innerHTML = list.map(card).join("");
-    })
-    .catch(fallback);
+    .then(function(list){ if(!Array.isArray(list) || !list.length) throw new Error("empty"); render(list); })
+    .catch(function(){
+      fetch("https://api.github.com/users/asmuelle/repos?per_page=100&sort=pushed&type=owner",
+            { headers: { "Accept": "application/vnd.github+json" } })
+        .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
+        .then(function(repos){
+          if(!Array.isArray(repos)) throw new Error("bad payload");
+          var list = repos.filter(function(r){
+            return !r.fork && !r.archived && !r.disabled && r.description
+              && r.pushed_at && FEATURED.indexOf(r.name)===-1;
+          }).sort(function(a,b){
+            return new Date(b.pushed_at)-new Date(a.pushed_at);
+          }).slice(0,6);
+          render(list);
+        })
+        .catch(fallback);
+    });
 
   (function(){
     var els=document.querySelectorAll(".reveal");
