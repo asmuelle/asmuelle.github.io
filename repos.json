@@ -6,45 +6,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/cernsim-app",
     "pushed_at": "2026-06-14T15:14:58Z"
-  },
-  {
-    "name": "node-temper1",
-    "description": "Measure temperatures with nodejs and temper1 usb thermometers",
-    "language": "JavaScript",
-    "stargazers_count": 24,
-    "html_url": "https://github.com/asmuelle/node-temper1",
-    "pushed_at": "2019-02-21T05:14:00Z"
-  },
-  {
-    "name": "CNCDoveTailCut",
-    "description": "Generate GCode for cutting dove tail joints with a CNC milling machine",
-    "language": "JavaScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/CNCDoveTailCut",
-    "pushed_at": "2016-02-09T10:25:29Z"
-  },
-  {
-    "name": "gitplayground",
-    "description": "play with git features",
-    "language": null,
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/gitplayground",
-    "pushed_at": "2015-05-04T16:06:16Z"
-  },
-  {
-    "name": "heekscnc",
-    "description": "Automatically exported from code.google.com/p/heekscnc",
-    "language": "C++",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/heekscnc",
-    "pushed_at": "2015-03-16T08:15:25Z"
-  },
-  {
-    "name": "twitcare",
-    "description": "nodejs app to support twitter best practices to increase number of supportive followers",
-    "language": "JavaScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/twitcare",
-    "pushed_at": "2013-05-09T17:23:37Z"
   }
 ]
