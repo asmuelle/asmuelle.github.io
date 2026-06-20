@@ -3,6 +3,9 @@
 My personal landing page — selected work plus a live grid of recent projects,
 served at **https://asmuelle.github.io/** in 10 languages.
 
+📊 **[Repository status board → STATUS.md](./STATUS.md)** — live CI/check, commit,
+and open-issue badges for every public repository.
+
 ## Generated, not hand-edited
 
 The HTML pages are **built** from a single translation source, so do not edit
@@ -62,6 +65,12 @@ localized `<title>`/meta/OpenGraph, and structured data.
   sites whose `sitemap.xml` should be aggregated. Generated, not hand-edited.
 - `scripts/build-sitemap-index.mjs` — renders `sitemap-index.xml` from
   `pages-projects.json` (offline/deterministic; also called by `build-site.mjs`).
+- `STATUS.md` — central repository status board (live CI/check, commit-freshness,
+  and open-issue badges for every public repo, with live links for Pages sites).
+  Generated, not hand-edited.
+- `scripts/build-status.mjs` — regenerates `STATUS.md` from the GitHub API
+  (badges are dynamic, so only the repo list needs rebuilding). Requires `gh`
+  authenticated.
 - `scripts/build-pages-projects.sh` — refreshes `pages-projects.json` from the
   GitHub API: every owner repo with Pages enabled whose site actually **serves a
   `sitemap.xml`** (probed live, so the index never points at a 404). Additive — a
