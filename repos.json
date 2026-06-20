@@ -1,5 +1,29 @@
 [
   {
+    "name": "inward",
+    "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/inward",
+    "pushed_at": "2026-06-20T21:00:10Z"
+  },
+  {
+    "name": "selene",
+    "description": "A cycle, fertility, and perimenopause tracker whose AI insight engine runs entirely on-device — no server to subpoena, breach, or sell data from, verifiable in airplane mode.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/selene",
+    "pushed_at": "2026-06-20T20:58:27Z"
+  },
+  {
+    "name": "flank",
+    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/flank",
+    "pushed_at": "2026-06-20T20:09:25Z"
+  },
+  {
     "name": "stringer",
     "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
     "language": "TypeScript",
@@ -22,29 +46,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/regdelta",
     "pushed_at": "2026-06-20T20:06:19Z"
-  },
-  {
-    "name": "perennial",
-    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/perennial",
-    "pushed_at": "2026-06-20T20:06:17Z"
-  },
-  {
-    "name": "parlo",
-    "description": "An AI speaking partner for language learners that runs entirely on the phone — unlimited conversation roleplay and pronunciation feedback, offline, at a quarter of Speak's price.",
-    "language": "Swift",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/parlo",
-    "pushed_at": "2026-06-20T20:06:15Z"
-  },
-  {
-    "name": "kinsight",
-    "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
-    "language": "Kotlin",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/kinsight",
-    "pushed_at": "2026-06-20T20:06:13Z"
   }
 ]
