@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "name": "tenderhook",
+    "description": "Procurement radar for SMB government contractors: a daily agent over SAM.gov, state/local portals, and buyer budget docs maintains living dossiers per agency and opportunity — matching tenders to your capabilities, red-lining amendments, flagging expiring incumbents.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/tenderhook",
+    "pushed_at": "2026-06-19T23:17:18Z"
+  },
+  {
+    "name": "stringer",
+    "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/stringer",
+    "pushed_at": "2026-06-19T23:17:15Z"
+  },
+  {
+    "name": "statutory",
+    "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/statutory",
+    "pushed_at": "2026-06-19T23:17:13Z"
+  },
+  {
+    "name": "regdelta",
+    "description": "A living, citation-pinned obligation map for SME compliance teams: an agent watches regulators in your jurisdictions daily and maintains an always-current, audit-ready wiki of what changed, who it affects, and what you must do by when.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/regdelta",
+    "pushed_at": "2026-06-19T23:17:10Z"
+  },
+  {
+    "name": "perennial",
+    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/perennial",
+    "pushed_at": "2026-06-19T23:17:07Z"
+  },
+  {
+    "name": "parlo",
+    "description": "An AI speaking partner for language learners that runs entirely on the phone — unlimited conversation roleplay and pronunciation feedback, offline, at a quarter of Speak's price.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/parlo",
+    "pushed_at": "2026-06-19T23:17:05Z"
+  }
+]
