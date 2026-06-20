@@ -68,6 +68,7 @@
   a{color:inherit;text-decoration:none;}
   .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(18px,4vw,34px);}
   .skip{position:absolute;left:-999px;}.skip:focus{left:16px;top:16px;background:var(--panel);padding:10px 14px;border-radius:8px;z-index:99;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
   .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:.9rem;font-weight:600;
     padding:9px 16px;border-radius:999px;border:1px solid var(--line-strong);color:var(--text);background:rgba(255,255,255,.03);
@@ -75,9 +76,24 @@
   .btn:hover{transform:translateY(-1px);border-color:var(--cyan);box-shadow:var(--glow);}
   .btn.primary{background:var(--grad);color:#04121a;border:none;font-weight:700;}
 
+  /* language selector */
+  .topbar{display:flex;justify-content:flex-end;padding-top:clamp(16px,2.4vw,24px);}
+  .lang-select{position:relative;display:inline-flex;align-items:center;}
+  .lang-select .globe{position:absolute;left:13px;width:15px;height:15px;color:var(--cyan);pointer-events:none;}
+  .lang-select .chev{position:absolute;right:15px;top:50%;width:7px;height:7px;
+    border-right:1.6px solid var(--dim);border-bottom:1.6px solid var(--dim);
+    transform:translateY(-65%) rotate(45deg);pointer-events:none;transition:border-color .2s;}
+  select.lang{appearance:none;-webkit-appearance:none;font-family:var(--mono);font-size:.8rem;font-weight:600;letter-spacing:.01em;
+    color:var(--muted);background:rgba(255,255,255,.03);border:1px solid var(--line-strong);border-radius:999px;
+    padding:8px 34px 8px 35px;cursor:pointer;transition:transform .18s var(--ease),border-color .2s,box-shadow .2s,color .2s;}
+  select.lang:hover{color:var(--text);border-color:var(--cyan);box-shadow:var(--glow);transform:translateY(-1px);}
+  .lang-select:hover .chev{border-color:var(--cyan);}
+  select.lang:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;}
+  select.lang option{background:var(--panel);color:var(--text);}
+
   /* hero */
-  header{padding:clamp(46px,7vw,92px) 0 clamp(28px,4vw,52px);}
-  .hero{display:flex;gap:clamp(22px,4vw,40px);align-items:center;flex-wrap:wrap;}
+  header{padding:0 0 clamp(28px,4vw,52px);}
+  .hero{display:flex;gap:clamp(22px,4vw,40px);align-items:center;flex-wrap:wrap;padding-top:clamp(30px,5vw,60px);}
   .avatar{width:118px;height:118px;border-radius:26px;border:1px solid var(--line-strong);box-shadow:var(--glow);flex:none;}
   .hero .who{min-width:0;flex:1;}
   .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.76rem;letter-spacing:.02em;
@@ -146,30 +162,52 @@
         async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
-<a class="skip" href="#projects">Skip to projects</a>
+<a class="skip" href="#projects" data-i18n="skip">Skip to projects</a>
 
 <header>
+  <div class="wrap topbar">
+    <span class="lang-select">
+      <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3z"></path>
+      </svg>
+      <span class="chev"></span>
+      <label class="sr-only" for="langSelect" data-i18n="lang.label">Language</label>
+      <select class="lang" id="langSelect" aria-label="Language">
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="pt">Português</option>
+        <option value="nb">Norsk</option>
+        <option value="sv">Svenska</option>
+        <option value="da">Dansk</option>
+        <option value="ru">Русский</option>
+        <option value="zh">简体中文</option>
+      </select>
+    </span>
+  </div>
   <div class="wrap hero">
     <img class="avatar" src="https://avatars.githubusercontent.com/u/309559?v=4" alt="Andreas Müller" width="118" height="118" />
     <div class="who">
-      <span class="avail"><span class="pulse"></span> Available for consulting — Rust &amp; native-app engineering</span>
-      <h1>Andreas&nbsp;Müller — I build <span class="grad">native apps and the tools that ship them.</span></h1>
-      <p class="lede">I help teams ship native macOS &amp; iPadOS apps over memory-safe Rust cores (bridged with UniFFI), deep PostgreSQL &amp; SSH tooling, and cargo/CI developer tools that make Rust development safer.</p>
+      <span class="avail"><span class="pulse"></span> <span data-i18n="avail">Available for consulting — Rust &amp; native-app engineering</span></span>
+      <h1>Andreas&nbsp;Müller — <span data-i18n="hero.lead">I build</span> <span class="grad" data-i18n="hero.grad">native apps and the tools that ship them.</span></h1>
+      <p class="lede" data-i18n="hero.lede">I help teams ship native macOS &amp; iPadOS apps over memory-safe Rust cores (bridged with UniFFI), deep PostgreSQL &amp; SSH tooling, and cargo/CI developer tools that make Rust development safer.</p>
       <div class="meta">
-        <span><b>Rust / Java / JavaScript</b> developer @ kWIQly</span>
-        <span>📍 Lake Constance</span>
+        <span><b>Rust / Java / JavaScript</b> <span data-i18n="meta.role">developer @ kWIQly</span></span>
+        <span>📍 <span data-i18n="meta.loc">Lake Constance</span></span>
         <span>↗ <b>kwiqly.com</b></span>
       </div>
       <div class="links">
-        <a class="btn primary" href="mailto:herban.mueller@gmail.com?subject=Consulting%20enquiry">Work with me →</a>
+        <a class="btn primary" href="mailto:herban.mueller@gmail.com?subject=Consulting%20enquiry" data-i18n="links.work">Work with me →</a>
         <a class="btn" href="https://www.linkedin.com/in/andreas-müller-1692989" rel="noopener">LinkedIn ↗</a>
         <a class="btn" href="https://github.com/asmuelle" rel="noopener">GitHub ↗</a>
       </div>
       <div class="proof">
-        <span>On GitHub since <b>2010</b></span>
-        <span>Published on <b>crates.io</b></span>
+        <span><span data-i18n="proof.since">On GitHub since</span> <b>2010</b></span>
+        <span><span data-i18n="proof.published">Published on</span> <b>crates.io</b></span>
         <span><b>Rust</b> · Swift · TypeScript · Java</span>
-        <span>Native <b>macOS &amp; iPadOS</b></span>
+        <span data-i18n="proof.native">Native macOS &amp; iPadOS</span>
       </div>
     </div>
   </div>
@@ -180,55 +218,55 @@
   <section id="projects">
     <div class="wrap">
       <div class="head">
-        <p class="kicker">Featured</p>
-        <h2>Selected work</h2>
+        <p class="kicker" data-i18n="feat.kicker">Featured</p>
+        <h2 data-i18n="feat.title">Selected work</h2>
       </div>
       <div class="grid">
         <article class="repo feat reveal">
-          <div class="top"><span class="nm">pgAgent</span><span class="pin">Flagship</span></div>
-          <p>A native macOS &amp; iPadOS workspace for PostgreSQL &amp; SSH — a routine editor that out-engineers the big IDEs, transactional-safe DDL, an ERD, dual-pane SFTP and on-device AI.</p>
+          <div class="top"><span class="nm">pgAgent</span><span class="pin" data-i18n="feat.pin">Flagship</span></div>
+          <p data-i18n="proj.pgagent">A native macOS &amp; iPadOS workspace for PostgreSQL &amp; SSH — a routine editor that out-engineers the big IDEs, transactional-safe DDL, an ERD, dual-pane SFTP and on-device AI.</p>
           <div class="chips"><span class="chip">SwiftUI + AppKit</span><span class="chip">Rust core</span><span class="chip">UniFFI</span></div>
-          <div class="acts"><a href="https://asmuelle.github.io/agent-postgres/" rel="noopener">Live site →</a><a href="https://github.com/asmuelle/agent-postgres" rel="noopener">Code →</a></div>
+          <div class="acts"><a href="https://asmuelle.github.io/agent-postgres/" rel="noopener" data-i18n="acts.live">Live site →</a><a href="https://github.com/asmuelle/agent-postgres" rel="noopener" data-i18n="acts.code">Code →</a></div>
         </article>
 
         <article class="repo feat reveal">
           <div class="top"><span class="nm">agent-ssh</span></div>
-          <p>Native macOS &amp; iPadOS SSH workspace — terminal, SFTP, PostgreSQL, monitoring and network tools over a memory-safe Rust core bridged to Swift.</p>
+          <p data-i18n="proj.agentssh">Native macOS &amp; iPadOS SSH workspace — terminal, SFTP, PostgreSQL, monitoring and network tools over a memory-safe Rust core bridged to Swift.</p>
           <div class="chips"><span class="chip">SwiftUI</span><span class="chip">SwiftTerm</span><span class="chip">Rust</span></div>
-          <div class="acts"><a href="https://github.com/asmuelle/agent-ssh" rel="noopener">Code →</a></div>
+          <div class="acts"><a href="https://github.com/asmuelle/agent-ssh" rel="noopener" data-i18n="acts.code">Code →</a></div>
         </article>
 
         <article class="repo feat reveal">
           <div class="top"><span class="nm">ssh-commander-core</span></div>
-          <p>The async Rust domain layer behind the apps — SSH, SFTP, FTP/FTPS, PostgreSQL and connection management, published to crates.io.</p>
+          <p data-i18n="proj.core">The async Rust domain layer behind the apps — SSH, SFTP, FTP/FTPS, PostgreSQL and connection management, published to crates.io.</p>
           <div class="chips"><span class="chip">Rust</span><span class="chip">async</span><span class="chip">crates.io</span></div>
-          <div class="acts"><a href="https://github.com/asmuelle/ssh-commander-core" rel="noopener">Code →</a></div>
+          <div class="acts"><a href="https://github.com/asmuelle/ssh-commander-core" rel="noopener" data-i18n="acts.code">Code →</a></div>
         </article>
 
         <article class="repo feat reveal">
           <div class="top"><span class="nm">r-shell</span></div>
-          <p>A lightweight, open-source SSH/SFTP/FTP client in Rust &amp; Tauri 2 — split terminals, SFTP, GPU monitoring. ~34 MB RAM, installer under 10 MB.</p>
+          <p data-i18n="proj.rshell">A lightweight, open-source SSH/SFTP/FTP client in Rust &amp; Tauri 2 — split terminals, SFTP, GPU monitoring. ~34 MB RAM, installer under 10 MB.</p>
           <div class="chips"><span class="chip">Rust</span><span class="chip">Tauri 2</span><span class="chip">cross-platform</span></div>
-          <div class="acts"><a href="https://github.com/asmuelle/r-shell" rel="noopener">Code →</a></div>
+          <div class="acts"><a href="https://github.com/asmuelle/r-shell" rel="noopener" data-i18n="acts.code">Code →</a></div>
         </article>
 
         <article class="repo feat reveal">
           <div class="top"><span class="nm">cargo-impact</span></div>
-          <p>Dependency-impact analysis for Rust — SARIF code-scanning and sticky PR comments to gate risky changes, with a ready-made GitHub Action.</p>
+          <p data-i18n="proj.impact">Dependency-impact analysis for Rust — SARIF code-scanning and sticky PR comments to gate risky changes, with a ready-made GitHub Action.</p>
           <div class="chips"><span class="chip">Rust</span><span class="chip">GitHub Action</span><span class="chip">SARIF</span></div>
-          <div class="acts"><a href="https://github.com/asmuelle/cargo-impact" rel="noopener">Code →</a><a href="https://github.com/asmuelle/cargo-impact-action" rel="noopener">Action →</a></div>
+          <div class="acts"><a href="https://github.com/asmuelle/cargo-impact" rel="noopener" data-i18n="acts.code">Code →</a><a href="https://github.com/asmuelle/cargo-impact-action" rel="noopener" data-i18n="acts.action">Action →</a></div>
         </article>
 
         <article class="repo feat reveal">
           <div class="top"><span class="nm">cargo · CI tooling</span></div>
-          <p>A growing set of tools for safer, AI-assisted Rust development — diff risk scoring, spec-drift detection, build context, and more.</p>
+          <p data-i18n="proj.cargo">A growing set of tools for safer, AI-assisted Rust development — diff risk scoring, spec-drift detection, build context, and more.</p>
           <div class="chips">
             <a class="chip" href="https://github.com/asmuelle/diff-risk" rel="noopener">diff-risk</a>
             <a class="chip" href="https://github.com/asmuelle/spec-drift" rel="noopener">spec-drift</a>
             <a class="chip" href="https://github.com/asmuelle/cargo-context" rel="noopener">cargo-context</a>
             <a class="chip" href="https://github.com/asmuelle/ai-tools-core" rel="noopener">ai-tools-core</a>
           </div>
-          <div class="acts"><a href="https://github.com/asmuelle?tab=repositories&q=cargo&type=source" rel="noopener">All cargo tools →</a></div>
+          <div class="acts"><a href="https://github.com/asmuelle?tab=repositories&q=cargo&type=source" rel="noopener" data-i18n="acts.allcargo">All cargo tools →</a></div>
         </article>
       </div>
     </div>
@@ -238,14 +276,14 @@
   <section id="more">
     <div class="wrap">
       <div class="head">
-        <p class="kicker">More projects</p>
-        <h2>Also on GitHub</h2>
-        <span class="note">recently active · forks hidden</span>
+        <p class="kicker" data-i18n="more.kicker">More projects</p>
+        <h2 data-i18n="more.title">Also on GitHub</h2>
+        <span class="note" data-i18n="more.note">recently active · forks hidden</span>
       </div>
-      <p id="live-status">Loading projects…</p>
+      <p id="live-status" data-i18n="more.loading">Loading projects…</p>
       <div class="grid" id="live-grid"></div>
       <p style="margin-top:22px;font-family:var(--mono);font-size:.85rem;">
-        <a style="color:var(--cyan)" href="https://github.com/asmuelle?tab=repositories&type=source" rel="noopener">Browse all repositories on GitHub →</a>
+        <a style="color:var(--cyan)" href="https://github.com/asmuelle?tab=repositories&type=source" rel="noopener" data-i18n="more.browse">Browse all repositories on GitHub →</a>
       </p>
     </div>
   </section>
@@ -268,11 +306,272 @@
   document.documentElement.classList.add("js");
   document.getElementById("yr").textContent = new Date().getFullYear();
 
-  // Repos already shown in the Featured section — kept out of the live grid.
-  var FEATURED = ["agent-postgres","agent-ssh","ssh-commander-core","r-shell",
-    "cargo-impact","cargo-impact-action","diff-risk","spec-drift","cargo-context",
-    "ai-tools-core","cargo-vibecode"];
+  // ---- i18n -------------------------------------------------------------
+  // Translation strings are static, trusted constants. {n} is replaced with a
+  // count for the relative-time entries.
+  var I18N = {
+    en: {
+      "skip":"Skip to projects", "lang.label":"Language",
+      "avail":"Available for consulting — Rust & native-app engineering",
+      "hero.lead":"I build", "hero.grad":"native apps and the tools that ship them.",
+      "hero.lede":"I help teams ship native macOS & iPadOS apps over memory-safe Rust cores (bridged with UniFFI), deep PostgreSQL & SSH tooling, and cargo/CI developer tools that make Rust development safer.",
+      "meta.role":"developer @ kWIQly", "meta.loc":"Lake Constance",
+      "links.work":"Work with me →",
+      "proof.since":"On GitHub since", "proof.published":"Published on", "proof.native":"Native macOS & iPadOS",
+      "feat.kicker":"Featured", "feat.title":"Selected work", "feat.pin":"Flagship",
+      "proj.pgagent":"A native macOS & iPadOS workspace for PostgreSQL & SSH — a routine editor that out-engineers the big IDEs, transactional-safe DDL, an ERD, dual-pane SFTP and on-device AI.",
+      "proj.agentssh":"Native macOS & iPadOS SSH workspace — terminal, SFTP, PostgreSQL, monitoring and network tools over a memory-safe Rust core bridged to Swift.",
+      "proj.core":"The async Rust domain layer behind the apps — SSH, SFTP, FTP/FTPS, PostgreSQL and connection management, published to crates.io.",
+      "proj.rshell":"A lightweight, open-source SSH/SFTP/FTP client in Rust & Tauri 2 — split terminals, SFTP, GPU monitoring. ~34 MB RAM, installer under 10 MB.",
+      "proj.impact":"Dependency-impact analysis for Rust — SARIF code-scanning and sticky PR comments to gate risky changes, with a ready-made GitHub Action.",
+      "proj.cargo":"A growing set of tools for safer, AI-assisted Rust development — diff risk scoring, spec-drift detection, build context, and more.",
+      "acts.live":"Live site →", "acts.code":"Code →", "acts.action":"Action →", "acts.allcargo":"All cargo tools →",
+      "more.kicker":"More projects", "more.title":"Also on GitHub", "more.note":"recently active · forks hidden",
+      "more.loading":"Loading projects…", "more.browse":"Browse all repositories on GitHub →",
+      "card.nodesc":"No description.", "card.updated":"updated",
+      "card.today":"today", "card.yesterday":"yesterday", "card.dago":"{n}d ago", "card.moago":"{n}mo ago", "card.yago":"{n}y ago",
+      "fallback.text":"Couldn't load the live list right now —", "fallback.link":"browse all projects on GitHub ↗"
+    },
+    de: {
+      "skip":"Zu den Projekten springen", "lang.label":"Sprache",
+      "avail":"Verfügbar für Beratung — Rust & native App-Entwicklung",
+      "hero.lead":"Ich entwickle", "hero.grad":"native Apps und die Werkzeuge, die sie ausliefern.",
+      "hero.lede":"Ich helfe Teams, native macOS- & iPadOS-Apps auf Basis speichersicherer Rust-Kerne (per UniFFI angebunden) auszuliefern – dazu tiefgehende PostgreSQL- & SSH-Werkzeuge und cargo/CI-Entwicklertools, die die Rust-Entwicklung sicherer machen.",
+      "meta.role":"Entwickler @ kWIQly", "meta.loc":"Bodensee",
+      "links.work":"Mit mir arbeiten →",
+      "proof.since":"Auf GitHub seit", "proof.published":"Veröffentlicht auf", "proof.native":"Nativ für macOS & iPadOS",
+      "feat.kicker":"Ausgewählt", "feat.title":"Ausgewählte Arbeiten", "feat.pin":"Flaggschiff",
+      "proj.pgagent":"Ein nativer macOS- & iPadOS-Arbeitsbereich für PostgreSQL & SSH – ein Routinen-Editor, der die großen IDEs übertrifft, transaktionssicheres DDL, ein ERD, zweispaltiges SFTP und KI auf dem Gerät.",
+      "proj.agentssh":"Nativer macOS- & iPadOS-SSH-Arbeitsbereich – Terminal, SFTP, PostgreSQL, Monitoring und Netzwerk-Tools auf einem speichersicheren, an Swift angebundenen Rust-Kern.",
+      "proj.core":"Die asynchrone Rust-Domänenschicht hinter den Apps – SSH, SFTP, FTP/FTPS, PostgreSQL und Verbindungsverwaltung, veröffentlicht auf crates.io.",
+      "proj.rshell":"Ein leichtgewichtiger Open-Source-SSH/SFTP/FTP-Client in Rust & Tauri 2 – geteilte Terminals, SFTP, GPU-Monitoring. ~34 MB RAM, Installer unter 10 MB.",
+      "proj.impact":"Analyse von Abhängigkeitsauswirkungen für Rust – SARIF-Code-Scanning und persistente PR-Kommentare, um riskante Änderungen abzusichern, mit einer fertigen GitHub Action.",
+      "proj.cargo":"Eine wachsende Sammlung von Tools für sicherere, KI-gestützte Rust-Entwicklung – Diff-Risikobewertung, Spec-Drift-Erkennung, Build-Kontext und mehr.",
+      "acts.live":"Live-Seite →", "acts.code":"Code →", "acts.action":"Action →", "acts.allcargo":"Alle cargo-Tools →",
+      "more.kicker":"Mehr Projekte", "more.title":"Auch auf GitHub", "more.note":"kürzlich aktiv · Forks ausgeblendet",
+      "more.loading":"Projekte werden geladen…", "more.browse":"Alle Repositorys auf GitHub ansehen →",
+      "card.nodesc":"Keine Beschreibung.", "card.updated":"aktualisiert",
+      "card.today":"heute", "card.yesterday":"gestern", "card.dago":"vor {n} T", "card.moago":"vor {n} Mon", "card.yago":"vor {n} J",
+      "fallback.text":"Die Live-Liste konnte gerade nicht geladen werden —", "fallback.link":"alle Projekte auf GitHub ansehen ↗"
+    },
+    fr: {
+      "skip":"Aller aux projets", "lang.label":"Langue",
+      "avail":"Disponible pour du conseil — Rust & ingénierie d'apps natives",
+      "hero.lead":"Je conçois", "hero.grad":"des apps natives et les outils qui les livrent.",
+      "hero.lede":"J'aide les équipes à livrer des apps natives macOS & iPadOS reposant sur des cœurs Rust à mémoire sûre (reliés via UniFFI), un outillage PostgreSQL & SSH avancé, et des outils cargo/CI qui rendent le développement Rust plus sûr.",
+      "meta.role":"développeur @ kWIQly", "meta.loc":"Lac de Constance",
+      "links.work":"Travailler avec moi →",
+      "proof.since":"Sur GitHub depuis", "proof.published":"Publié sur", "proof.native":"Natif macOS & iPadOS",
+      "feat.kicker":"À la une", "feat.title":"Travaux sélectionnés", "feat.pin":"Produit phare",
+      "proj.pgagent":"Un espace de travail natif macOS & iPadOS pour PostgreSQL & SSH — un éditeur de routines qui surpasse les grands IDE, du DDL transactionnel sûr, un MCD, du SFTP à deux volets et de l'IA embarquée.",
+      "proj.agentssh":"Espace de travail SSH natif macOS & iPadOS — terminal, SFTP, PostgreSQL, supervision et outils réseau sur un cœur Rust à mémoire sûre relié à Swift.",
+      "proj.core":"La couche métier Rust asynchrone derrière les apps — SSH, SFTP, FTP/FTPS, PostgreSQL et gestion des connexions, publiée sur crates.io.",
+      "proj.rshell":"Un client SSH/SFTP/FTP léger et open source en Rust & Tauri 2 — terminaux divisés, SFTP, supervision GPU. ~34 Mo de RAM, installateur sous 10 Mo.",
+      "proj.impact":"Analyse de l'impact des dépendances pour Rust — analyse de code SARIF et commentaires de PR persistants pour encadrer les changements risqués, avec une GitHub Action prête à l'emploi.",
+      "proj.cargo":"Un ensemble croissant d'outils pour un développement Rust plus sûr et assisté par l'IA — évaluation du risque des diffs, détection de dérive de spécification, contexte de build, et plus encore.",
+      "acts.live":"Site en ligne →", "acts.code":"Code →", "acts.action":"Action →", "acts.allcargo":"Tous les outils cargo →",
+      "more.kicker":"Plus de projets", "more.title":"Aussi sur GitHub", "more.note":"récemment actifs · forks masqués",
+      "more.loading":"Chargement des projets…", "more.browse":"Voir tous les dépôts sur GitHub →",
+      "card.nodesc":"Aucune description.", "card.updated":"mis à jour",
+      "card.today":"aujourd'hui", "card.yesterday":"hier", "card.dago":"il y a {n} j", "card.moago":"il y a {n} mois", "card.yago":"il y a {n} ans",
+      "fallback.text":"Impossible de charger la liste en direct pour le moment —", "fallback.link":"voir tous les projets sur GitHub ↗"
+    },
+    es: {
+      "skip":"Ir a los proyectos", "lang.label":"Idioma",
+      "avail":"Disponible para consultoría — Rust e ingeniería de apps nativas",
+      "hero.lead":"Creo", "hero.grad":"apps nativas y las herramientas que las publican.",
+      "hero.lede":"Ayudo a los equipos a publicar apps nativas de macOS e iPadOS sobre núcleos Rust con memoria segura (conectados con UniFFI), herramientas avanzadas de PostgreSQL y SSH, y herramientas cargo/CI que hacen más seguro el desarrollo en Rust.",
+      "meta.role":"desarrollador @ kWIQly", "meta.loc":"Lago de Constanza",
+      "links.work":"Trabaja conmigo →",
+      "proof.since":"En GitHub desde", "proof.published":"Publicado en", "proof.native":"Nativo en macOS e iPadOS",
+      "feat.kicker":"Destacado", "feat.title":"Trabajo seleccionado", "feat.pin":"Insignia",
+      "proj.pgagent":"Un espacio de trabajo nativo de macOS e iPadOS para PostgreSQL y SSH: un editor de rutinas que supera a los grandes IDE, DDL transaccionalmente seguro, un ERD, SFTP de doble panel e IA en el dispositivo.",
+      "proj.agentssh":"Espacio de trabajo SSH nativo de macOS e iPadOS: terminal, SFTP, PostgreSQL, monitorización y herramientas de red sobre un núcleo Rust con memoria segura conectado a Swift.",
+      "proj.core":"La capa de dominio Rust asíncrona detrás de las apps: SSH, SFTP, FTP/FTPS, PostgreSQL y gestión de conexiones, publicada en crates.io.",
+      "proj.rshell":"Un cliente SSH/SFTP/FTP ligero y de código abierto en Rust y Tauri 2: terminales divididas, SFTP, monitorización de GPU. ~34 MB de RAM, instalador por debajo de 10 MB.",
+      "proj.impact":"Análisis del impacto de dependencias para Rust: escaneo de código SARIF y comentarios fijos en los PR para controlar cambios arriesgados, con una GitHub Action lista para usar.",
+      "proj.cargo":"Un conjunto creciente de herramientas para un desarrollo en Rust más seguro y asistido por IA: puntuación de riesgo de diffs, detección de desviación de especificación, contexto de compilación y más.",
+      "acts.live":"Sitio en vivo →", "acts.code":"Código →", "acts.action":"Action →", "acts.allcargo":"Todas las herramientas cargo →",
+      "more.kicker":"Más proyectos", "more.title":"También en GitHub", "more.note":"activos recientemente · forks ocultos",
+      "more.loading":"Cargando proyectos…", "more.browse":"Ver todos los repositorios en GitHub →",
+      "card.nodesc":"Sin descripción.", "card.updated":"actualizado",
+      "card.today":"hoy", "card.yesterday":"ayer", "card.dago":"hace {n} d", "card.moago":"hace {n} mes", "card.yago":"hace {n} a",
+      "fallback.text":"No se pudo cargar la lista en vivo ahora mismo —", "fallback.link":"ver todos los proyectos en GitHub ↗"
+    },
+    pt: {
+      "skip":"Ir para os projetos", "lang.label":"Idioma",
+      "avail":"Disponível para consultoria — Rust e engenharia de apps nativos",
+      "hero.lead":"Crio", "hero.grad":"apps nativos e as ferramentas que os entregam.",
+      "hero.lede":"Ajudo equipas a entregar apps nativos de macOS e iPadOS sobre núcleos Rust com memória segura (ligados via UniFFI), ferramentas avançadas de PostgreSQL e SSH, e ferramentas cargo/CI que tornam o desenvolvimento em Rust mais seguro.",
+      "meta.role":"programador @ kWIQly", "meta.loc":"Lago de Constança",
+      "links.work":"Trabalhe comigo →",
+      "proof.since":"No GitHub desde", "proof.published":"Publicado em", "proof.native":"Nativo em macOS e iPadOS",
+      "feat.kicker":"Destaque", "feat.title":"Trabalho selecionado", "feat.pin":"Carro-chefe",
+      "proj.pgagent":"Um espaço de trabalho nativo de macOS e iPadOS para PostgreSQL e SSH — um editor de rotinas que supera os grandes IDEs, DDL seguro em transações, um ERD, SFTP de painel duplo e IA no dispositivo.",
+      "proj.agentssh":"Espaço de trabalho SSH nativo de macOS e iPadOS — terminal, SFTP, PostgreSQL, monitorização e ferramentas de rede sobre um núcleo Rust com memória segura ligado ao Swift.",
+      "proj.core":"A camada de domínio Rust assíncrona por trás das apps — SSH, SFTP, FTP/FTPS, PostgreSQL e gestão de ligações, publicada no crates.io.",
+      "proj.rshell":"Um cliente SSH/SFTP/FTP leve e de código aberto em Rust e Tauri 2 — terminais divididos, SFTP, monitorização de GPU. ~34 MB de RAM, instalador abaixo de 10 MB.",
+      "proj.impact":"Análise do impacto de dependências para Rust — análise de código SARIF e comentários fixos em PRs para controlar alterações arriscadas, com uma GitHub Action pronta a usar.",
+      "proj.cargo":"Um conjunto crescente de ferramentas para um desenvolvimento em Rust mais seguro e assistido por IA — pontuação de risco de diffs, deteção de desvio de especificação, contexto de build e mais.",
+      "acts.live":"Site ao vivo →", "acts.code":"Código →", "acts.action":"Action →", "acts.allcargo":"Todas as ferramentas cargo →",
+      "more.kicker":"Mais projetos", "more.title":"Também no GitHub", "more.note":"ativos recentemente · forks ocultos",
+      "more.loading":"A carregar projetos…", "more.browse":"Ver todos os repositórios no GitHub →",
+      "card.nodesc":"Sem descrição.", "card.updated":"atualizado",
+      "card.today":"hoje", "card.yesterday":"ontem", "card.dago":"há {n} d", "card.moago":"há {n} m", "card.yago":"há {n} a",
+      "fallback.text":"Não foi possível carregar a lista ao vivo agora —", "fallback.link":"ver todos os projetos no GitHub ↗"
+    },
+    nb: {
+      "skip":"Hopp til prosjekter", "lang.label":"Språk",
+      "avail":"Tilgjengelig for konsulentarbeid — Rust & native app-utvikling",
+      "hero.lead":"Jeg bygger", "hero.grad":"native apper og verktøyene som leverer dem.",
+      "hero.lede":"Jeg hjelper team med å levere native macOS- og iPadOS-apper på minnetrygge Rust-kjerner (koblet med UniFFI), avansert PostgreSQL- og SSH-verktøy, og cargo/CI-utviklerverktøy som gjør Rust-utvikling tryggere.",
+      "meta.role":"utvikler @ kWIQly", "meta.loc":"Bodensjøen",
+      "links.work":"Jobb med meg →",
+      "proof.since":"På GitHub siden", "proof.published":"Publisert på", "proof.native":"Native macOS & iPadOS",
+      "feat.kicker":"Utvalgt", "feat.title":"Utvalgt arbeid", "feat.pin":"Flaggskip",
+      "proj.pgagent":"Et native macOS- og iPadOS-arbeidsområde for PostgreSQL og SSH — en rutine-editor som overgår de store IDE-ene, transaksjonssikker DDL, et ERD, todelt SFTP og AI på enheten.",
+      "proj.agentssh":"Native macOS- og iPadOS-SSH-arbeidsområde — terminal, SFTP, PostgreSQL, overvåking og nettverksverktøy på en minnetrygg Rust-kjerne koblet til Swift.",
+      "proj.core":"Det asynkrone Rust-domenelaget bak appene — SSH, SFTP, FTP/FTPS, PostgreSQL og tilkoblingshåndtering, publisert på crates.io.",
+      "proj.rshell":"En lett SSH/SFTP/FTP-klient med åpen kildekode i Rust & Tauri 2 — delte terminaler, SFTP, GPU-overvåking. ~34 MB RAM, installer under 10 MB.",
+      "proj.impact":"Analyse av avhengighetspåvirkning for Rust — SARIF-kodeskanning og faste PR-kommentarer for å styre risikable endringer, med en ferdig GitHub Action.",
+      "proj.cargo":"Et voksende sett med verktøy for tryggere, AI-assistert Rust-utvikling — risikoscoring av diff, oppdaging av spesifikasjonsavvik, byggekontekst og mer.",
+      "acts.live":"Live-side →", "acts.code":"Kode →", "acts.action":"Action →", "acts.allcargo":"Alle cargo-verktøy →",
+      "more.kicker":"Flere prosjekter", "more.title":"Også på GitHub", "more.note":"nylig aktive · forks skjult",
+      "more.loading":"Laster prosjekter…", "more.browse":"Se alle repositorier på GitHub →",
+      "card.nodesc":"Ingen beskrivelse.", "card.updated":"oppdatert",
+      "card.today":"i dag", "card.yesterday":"i går", "card.dago":"for {n} d siden", "card.moago":"for {n} mnd siden", "card.yago":"for {n} år siden",
+      "fallback.text":"Kunne ikke laste live-listen akkurat nå —", "fallback.link":"se alle prosjekter på GitHub ↗"
+    },
+    sv: {
+      "skip":"Hoppa till projekt", "lang.label":"Språk",
+      "avail":"Tillgänglig för konsultuppdrag — Rust & native app-utveckling",
+      "hero.lead":"Jag bygger", "hero.grad":"nativa appar och verktygen som levererar dem.",
+      "hero.lede":"Jag hjälper team att leverera nativa macOS- och iPadOS-appar på minnessäkra Rust-kärnor (kopplade med UniFFI), avancerade PostgreSQL- och SSH-verktyg, och cargo/CI-utvecklarverktyg som gör Rust-utveckling säkrare.",
+      "meta.role":"utvecklare @ kWIQly", "meta.loc":"Bodensjön",
+      "links.work":"Jobba med mig →",
+      "proof.since":"På GitHub sedan", "proof.published":"Publicerat på", "proof.native":"Nativt macOS & iPadOS",
+      "feat.kicker":"Utvalt", "feat.title":"Utvalt arbete", "feat.pin":"Flaggskepp",
+      "proj.pgagent":"En nativ macOS- och iPadOS-arbetsyta för PostgreSQL och SSH — en rutineditor som överträffar de stora IDE:erna, transaktionssäker DDL, ett ERD, SFTP med dubbla paneler och AI på enheten.",
+      "proj.agentssh":"Nativ macOS- och iPadOS-SSH-arbetsyta — terminal, SFTP, PostgreSQL, övervakning och nätverksverktyg på en minnessäker Rust-kärna kopplad till Swift.",
+      "proj.core":"Det asynkrona Rust-domänlagret bakom apparna — SSH, SFTP, FTP/FTPS, PostgreSQL och anslutningshantering, publicerat på crates.io.",
+      "proj.rshell":"En lättviktig SSH/SFTP/FTP-klient med öppen källkod i Rust & Tauri 2 — delade terminaler, SFTP, GPU-övervakning. ~34 MB RAM, installationsprogram under 10 MB.",
+      "proj.impact":"Analys av beroendepåverkan för Rust — SARIF-kodskanning och beständiga PR-kommentarer för att kontrollera riskfyllda ändringar, med en färdig GitHub Action.",
+      "proj.cargo":"En växande uppsättning verktyg för säkrare, AI-assisterad Rust-utveckling — riskpoäng för diffar, upptäckt av specifikationsavvikelser, byggkontext och mer.",
+      "acts.live":"Live-sida →", "acts.code":"Kod →", "acts.action":"Action →", "acts.allcargo":"Alla cargo-verktyg →",
+      "more.kicker":"Fler projekt", "more.title":"Även på GitHub", "more.note":"nyligen aktiva · forkar dolda",
+      "more.loading":"Laddar projekt…", "more.browse":"Visa alla repositorier på GitHub →",
+      "card.nodesc":"Ingen beskrivning.", "card.updated":"uppdaterad",
+      "card.today":"i dag", "card.yesterday":"i går", "card.dago":"{n} d sedan", "card.moago":"{n} mån sedan", "card.yago":"{n} år sedan",
+      "fallback.text":"Kunde inte ladda live-listan just nu —", "fallback.link":"visa alla projekt på GitHub ↗"
+    },
+    da: {
+      "skip":"Spring til projekter", "lang.label":"Sprog",
+      "avail":"Ledig for konsulentarbejde — Rust & native app-udvikling",
+      "hero.lead":"Jeg bygger", "hero.grad":"native apps og værktøjerne der leverer dem.",
+      "hero.lede":"Jeg hjælper teams med at levere native macOS- og iPadOS-apps på hukommelsessikre Rust-kerner (forbundet med UniFFI), avanceret PostgreSQL- og SSH-værktøj, og cargo/CI-udviklerværktøjer, der gør Rust-udvikling mere sikker.",
+      "meta.role":"udvikler @ kWIQly", "meta.loc":"Bodensøen",
+      "links.work":"Arbejd med mig →",
+      "proof.since":"På GitHub siden", "proof.published":"Udgivet på", "proof.native":"Native macOS & iPadOS",
+      "feat.kicker":"Udvalgt", "feat.title":"Udvalgt arbejde", "feat.pin":"Flagskib",
+      "proj.pgagent":"Et native macOS- og iPadOS-arbejdsområde til PostgreSQL og SSH — en rutine-editor, der overgår de store IDE'er, transaktionssikker DDL, et ERD, todelt SFTP og AI på enheden.",
+      "proj.agentssh":"Native macOS- og iPadOS-SSH-arbejdsområde — terminal, SFTP, PostgreSQL, overvågning og netværksværktøjer på en hukommelsessikker Rust-kerne forbundet til Swift.",
+      "proj.core":"Det asynkrone Rust-domænelag bag apps'ene — SSH, SFTP, FTP/FTPS, PostgreSQL og forbindelseshåndtering, udgivet på crates.io.",
+      "proj.rshell":"En letvægts SSH/SFTP/FTP-klient med åben kildekode i Rust & Tauri 2 — delte terminaler, SFTP, GPU-overvågning. ~34 MB RAM, installer under 10 MB.",
+      "proj.impact":"Analyse af afhængighedspåvirkning for Rust — SARIF-kodescanning og vedvarende PR-kommentarer til at styre risikable ændringer, med en færdig GitHub Action.",
+      "proj.cargo":"Et voksende sæt værktøjer til sikrere, AI-assisteret Rust-udvikling — risikoscoring af diff, registrering af specifikationsafvigelser, byggekontekst og mere.",
+      "acts.live":"Live-side →", "acts.code":"Kode →", "acts.action":"Action →", "acts.allcargo":"Alle cargo-værktøjer →",
+      "more.kicker":"Flere projekter", "more.title":"Også på GitHub", "more.note":"for nylig aktive · forks skjult",
+      "more.loading":"Indlæser projekter…", "more.browse":"Se alle repositorier på GitHub →",
+      "card.nodesc":"Ingen beskrivelse.", "card.updated":"opdateret",
+      "card.today":"i dag", "card.yesterday":"i går", "card.dago":"for {n} d siden", "card.moago":"for {n} mdr siden", "card.yago":"for {n} år siden",
+      "fallback.text":"Kunne ikke indlæse live-listen lige nu —", "fallback.link":"se alle projekter på GitHub ↗"
+    },
+    ru: {
+      "skip":"Перейти к проектам", "lang.label":"Язык",
+      "avail":"Доступен для консалтинга — Rust и разработка нативных приложений",
+      "hero.lead":"Я создаю", "hero.grad":"нативные приложения и инструменты для их доставки.",
+      "hero.lede":"Я помогаю командам выпускать нативные приложения для macOS и iPadOS на безопасных по памяти ядрах Rust (через UniFFI), создавать продвинутые инструменты для PostgreSQL и SSH, а также cargo/CI-инструменты, которые делают разработку на Rust безопаснее.",
+      "meta.role":"разработчик @ kWIQly", "meta.loc":"Боденское озеро",
+      "links.work":"Работать со мной →",
+      "proof.since":"На GitHub с", "proof.published":"Опубликовано на", "proof.native":"Нативно для macOS и iPadOS",
+      "feat.kicker":"Избранное", "feat.title":"Избранные работы", "feat.pin":"Флагман",
+      "proj.pgagent":"Нативное рабочее пространство для macOS и iPadOS для PostgreSQL и SSH — редактор процедур, превосходящий крупные IDE, транзакционно-безопасный DDL, ER-диаграмма, двухпанельный SFTP и ИИ на устройстве.",
+      "proj.agentssh":"Нативное SSH-рабочее пространство для macOS и iPadOS — терминал, SFTP, PostgreSQL, мониторинг и сетевые инструменты на безопасном по памяти ядре Rust, связанном со Swift.",
+      "proj.core":"Асинхронный доменный слой на Rust в основе приложений — SSH, SFTP, FTP/FTPS, PostgreSQL и управление соединениями, опубликован на crates.io.",
+      "proj.rshell":"Лёгкий SSH/SFTP/FTP-клиент с открытым исходным кодом на Rust и Tauri 2 — разделённые терминалы, SFTP, мониторинг GPU. ~34 МБ ОЗУ, установщик меньше 10 МБ.",
+      "proj.impact":"Анализ влияния зависимостей для Rust — сканирование кода в формате SARIF и закреплённые комментарии к PR для контроля рискованных изменений, с готовым GitHub Action.",
+      "proj.cargo":"Растущий набор инструментов для более безопасной разработки на Rust с помощью ИИ — оценка риска диффов, обнаружение расхождений со спецификацией, контекст сборки и другое.",
+      "acts.live":"Сайт →", "acts.code":"Код →", "acts.action":"Action →", "acts.allcargo":"Все инструменты cargo →",
+      "more.kicker":"Другие проекты", "more.title":"Ещё на GitHub", "more.note":"недавно активные · форки скрыты",
+      "more.loading":"Загрузка проектов…", "more.browse":"Все репозитории на GitHub →",
+      "card.nodesc":"Без описания.", "card.updated":"обновлено",
+      "card.today":"сегодня", "card.yesterday":"вчера", "card.dago":"{n} дн назад", "card.moago":"{n} мес назад", "card.yago":"{n} г назад",
+      "fallback.text":"Не удалось загрузить список сейчас —", "fallback.link":"посмотреть все проекты на GitHub ↗"
+    },
+    zh: {
+      "skip":"跳转到项目", "lang.label":"语言",
+      "avail":"可提供咨询服务 — Rust 与原生应用工程",
+      "hero.lead":"我打造", "hero.grad":"原生应用以及交付它们的工具。",
+      "hero.lede":"我帮助团队基于内存安全的 Rust 内核（通过 UniFFI 桥接）交付原生 macOS 与 iPadOS 应用，打造深度的 PostgreSQL 与 SSH 工具，以及让 Rust 开发更安全的 cargo/CI 开发者工具。",
+      "meta.role":"开发者 @ kWIQly", "meta.loc":"博登湖",
+      "links.work":"与我合作 →",
+      "proof.since":"活跃于 GitHub 自", "proof.published":"已发布于", "proof.native":"原生 macOS 与 iPadOS",
+      "feat.kicker":"精选", "feat.title":"精选作品", "feat.pin":"旗舰",
+      "proj.pgagent":"面向 PostgreSQL 与 SSH 的原生 macOS 与 iPadOS 工作空间——超越大型 IDE 的存储过程编辑器、事务安全的 DDL、ER 图、双栏 SFTP 以及设备端 AI。",
+      "proj.agentssh":"原生 macOS 与 iPadOS SSH 工作空间——终端、SFTP、PostgreSQL、监控与网络工具，构建于桥接到 Swift 的内存安全 Rust 内核之上。",
+      "proj.core":"支撑这些应用的异步 Rust 领域层——SSH、SFTP、FTP/FTPS、PostgreSQL 与连接管理，已发布至 crates.io。",
+      "proj.rshell":"基于 Rust 与 Tauri 2 的轻量级开源 SSH/SFTP/FTP 客户端——分屏终端、SFTP、GPU 监控。约 34 MB 内存，安装包小于 10 MB。",
+      "proj.impact":"面向 Rust 的依赖影响分析——SARIF 代码扫描与常驻 PR 评论，用于把控有风险的改动，并附带开箱即用的 GitHub Action。",
+      "proj.cargo":"一套不断扩充的工具，让 AI 辅助的 Rust 开发更安全——diff 风险评分、规格漂移检测、构建上下文等。",
+      "acts.live":"在线站点 →", "acts.code":"代码 →", "acts.action":"Action →", "acts.allcargo":"全部 cargo 工具 →",
+      "more.kicker":"更多项目", "more.title":"GitHub 上的更多内容", "more.note":"近期活跃 · 已隐藏 fork",
+      "more.loading":"正在加载项目…", "more.browse":"在 GitHub 上浏览所有仓库 →",
+      "card.nodesc":"暂无描述。", "card.updated":"更新于",
+      "card.today":"今天", "card.yesterday":"昨天", "card.dago":"{n} 天前", "card.moago":"{n} 个月前", "card.yago":"{n} 年前",
+      "fallback.text":"暂时无法加载实时列表 —", "fallback.link":"在 GitHub 上浏览所有项目 ↗"
+    }
+  };
 
+  // <html lang> values that differ from the selector code.
+  var HTML_LANG = { nb:"nb", zh:"zh-Hans" };
+  var currentLang = "en";
+
+  function dict(){ return I18N[currentLang] || I18N.en; }
+  function t(key){
+    var d = dict();
+    if(d[key] != null) return d[key];
+    return I18N.en[key] != null ? I18N.en[key] : key;
+  }
+  function tn(key, n){ return t(key).replace("{n}", n); }
+
+  function detectLang(){
+    try { var saved = localStorage.getItem("lang"); if(saved && I18N[saved]) return saved; } catch(e){}
+    var navs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+    for(var i=0;i<navs.length;i++){
+      var code = (navs[i] || "").toLowerCase();
+      if(code.indexOf("nb")===0 || code.indexOf("nn")===0 || code.indexOf("no")===0) return "nb";
+      var two = code.slice(0,2);
+      if(I18N[two]) return two;
+    }
+    return "en";
+  }
+
+  function applyLang(lang){
+    if(!I18N[lang]) lang = "en";
+    currentLang = lang;
+    var d = dict();
+    document.documentElement.lang = HTML_LANG[lang] || lang;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n");
+      if(d[k] != null) el.textContent = d[k];
+    });
+    var sel = document.getElementById("langSelect");
+    if(sel){ sel.value = lang; sel.setAttribute("aria-label", t("lang.label")); }
+    try { localStorage.setItem("lang", lang); } catch(e){}
+    renderState();
+  }
+
+  // ---- live repo grid ---------------------------------------------------
   var LANG_COLORS = {
     Swift:"#f05138", Rust:"#dea584", TypeScript:"#3178c6", JavaScript:"#f1e05a",
     Python:"#3572A5", Java:"#b07219", Kotlin:"#A97BFF", "C++":"#f34b7d", C:"#555555",
@@ -280,61 +579,94 @@
     Dart:"#00B4AB", "Jupyter Notebook":"#DA5B0B", Dockerfile:"#384d54", Vue:"#41b883"
   };
 
+  // Repos already shown in the Featured section — kept out of the live grid.
+  var FEATURED = ["agent-postgres","agent-ssh","ssh-commander-core","r-shell",
+    "cargo-impact","cargo-impact-action","diff-risk","spec-drift","cargo-context",
+    "ai-tools-core","cargo-vibecode"];
+
   function esc(s){ var d=document.createElement("div"); d.textContent=s==null?"":s; return d.innerHTML; }
   function ago(iso){
     var d=(Date.now()-new Date(iso).getTime())/86400000;
-    if(d<1) return "today"; if(d<2) return "yesterday";
-    if(d<31) return Math.round(d)+"d ago";
-    if(d<365) return Math.round(d/30)+"mo ago";
-    return Math.round(d/365)+"y ago";
+    if(d<1) return t("card.today"); if(d<2) return t("card.yesterday");
+    if(d<31) return tn("card.dago", Math.round(d));
+    if(d<365) return tn("card.moago", Math.round(d/30));
+    return tn("card.yago", Math.round(d/365));
   }
   function card(r){
     var lang = r.language ? '<span class="lang"><i style="background:'+(LANG_COLORS[r.language]||"#8aa")+'"></i>'+esc(r.language)+'</span>' : "";
     var stars = r.stargazers_count>0 ? '<span>★ '+r.stargazers_count+'</span>' : "";
     return '<article class="repo">'
       + '<div class="top"><span class="nm">'+esc(r.name)+'</span></div>'
-      + '<p>'+(r.description?esc(r.description):'<em style="color:var(--dim)">No description.</em>')+'</p>'
-      + '<div class="foot">'+lang+stars+'<span>updated '+ago(r.pushed_at)+'</span></div>'
-      + '<div class="acts" style="margin-top:14px"><a href="'+esc(r.html_url)+'" rel="noopener">Code →</a></div>'
+      + '<p>'+(r.description?esc(r.description):'<em style="color:var(--dim)">'+esc(t("card.nodesc"))+'</em>')+'</p>'
+      + '<div class="foot">'+lang+stars+'<span>'+esc(t("card.updated"))+' '+ago(r.pushed_at)+'</span></div>'
+      + '<div class="acts" style="margin-top:14px"><a href="'+esc(r.html_url)+'" rel="noopener">'+esc(t("acts.code"))+'</a></div>'
       + '</article>';
   }
-  function fallback(){
-    document.getElementById("live-status").innerHTML =
-      "Couldn't load the live list right now — <a style=\"color:var(--cyan)\" href=\"https://github.com/asmuelle?tab=repositories&type=source\" rel=\"noopener\">browse all projects on GitHub ↗</a>";
-  }
 
-  // Nothing to show → drop the whole section so the page ends cleanly on the
-  // featured cards. It reappears automatically once a qualifying repo exists.
-  function hideMore(){ var s=document.getElementById("more"); if(s) s.style.display="none"; }
+  // State of the live grid, so it can be re-rendered when the language changes.
+  // type: "loading" | "list" | "empty" | "fallback"
+  var gridState = { type:"loading" };
+  function setState(s){ gridState = s; renderState(); }
+  function renderState(){
+    var status = document.getElementById("live-status");
+    var grid = document.getElementById("live-grid");
+    var more = document.getElementById("more");
+    if(!status || !grid || !more) return;
 
-  function render(list){
-    if(!list.length){ hideMore(); return; }
-    document.getElementById("live-status").style.display="none";
-    document.getElementById("live-grid").innerHTML = list.map(card).join("");
+    if(gridState.type === "empty"){ more.style.display = "none"; return; }
+    more.style.display = "";
+
+    if(gridState.type === "list"){
+      status.style.display = "none";
+      grid.innerHTML = gridState.list.map(card).join("");
+      return;
+    }
+    if(gridState.type === "fallback"){
+      status.style.display = "";
+      grid.innerHTML = "";
+      status.innerHTML = esc(t("fallback.text"))
+        + ' <a style="color:var(--cyan)" href="https://github.com/asmuelle?tab=repositories&type=source" rel="noopener">'
+        + esc(t("fallback.link")) + '</a>';
+      return;
+    }
+    // loading
+    status.style.display = "";
+    status.textContent = t("more.loading");
+    grid.innerHTML = "";
   }
 
   // 1) Prefer the static, Action-generated list — fast, no API rate limit, already
   //    filtered/sorted/curated. An empty array is authoritative: hide the section.
   // 2) Fall back to the live API (60 req/hr/IP). 3) Fall back to a plain GitHub link.
-  fetch("repos.json", { cache: "no-cache" })
-    .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
-    .then(function(list){ if(!Array.isArray(list)) throw new Error("bad payload"); render(list); })
-    .catch(function(){
-      fetch("https://api.github.com/users/asmuelle/repos?per_page=100&sort=pushed&type=owner",
-            { headers: { "Accept": "application/vnd.github+json" } })
-        .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
-        .then(function(repos){
-          if(!Array.isArray(repos)) throw new Error("bad payload");
-          var list = repos.filter(function(r){
-            return !r.fork && !r.archived && !r.disabled && r.description
-              && r.pushed_at && FEATURED.indexOf(r.name)===-1;
-          }).sort(function(a,b){
-            return new Date(b.pushed_at)-new Date(a.pushed_at);
-          }).slice(0,6);
-          render(list);
-        })
-        .catch(fallback);
-    });
+  function loadRepos(){
+    fetch("repos.json", { cache: "no-cache" })
+      .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
+      .then(function(list){
+        if(!Array.isArray(list)) throw new Error("bad payload");
+        setState(list.length ? { type:"list", list:list } : { type:"empty" });
+      })
+      .catch(function(){
+        fetch("https://api.github.com/users/asmuelle/repos?per_page=100&sort=pushed&type=owner",
+              { headers: { "Accept": "application/vnd.github+json" } })
+          .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
+          .then(function(repos){
+            if(!Array.isArray(repos)) throw new Error("bad payload");
+            var list = repos.filter(function(r){
+              return !r.fork && !r.archived && !r.disabled && r.description
+                && r.pushed_at && FEATURED.indexOf(r.name)===-1;
+            }).sort(function(a,b){
+              return new Date(b.pushed_at)-new Date(a.pushed_at);
+            }).slice(0,6);
+            setState(list.length ? { type:"list", list:list } : { type:"empty" });
+          })
+          .catch(function(){ setState({ type:"fallback" }); });
+      });
+  }
+
+  // ---- boot -------------------------------------------------------------
+  applyLang(detectLang());
+  document.getElementById("langSelect").addEventListener("change", function(){ applyLang(this.value); });
+  loadRepos();
 
   (function(){
     var els=document.querySelectorAll(".reveal");
