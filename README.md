@@ -39,6 +39,12 @@ localized `<title>`/meta/OpenGraph, and structured data.
 - **JSON-LD** — `ProfilePage` + `Person` (with `knowsLanguage`, `sameAs`,
   `email`) + `SoftwareApplication`/`SoftwareSourceCode` per flagship project +
   `FAQPage`.
+- **`sitemap-index.xml`** — a root-domain **sitemap index** that aggregates this
+  site's own `sitemap.xml` with every project Pages site's sitemap
+  (`asmuelle.github.io/<slug>/sitemap.xml`). `robots.txt` points crawlers here, so
+  one entry discovers the whole portfolio. A sitemap index served from the host
+  root may reference URLs anywhere on the host, which is what makes per-repo
+  project sitemaps discoverable from a single place.
 - **Language selector** — a styled `<select>` that navigates to the localized URL
   (real navigation, not client-side text swapping), with a `<noscript>` link list.
 
@@ -52,10 +58,20 @@ localized `<title>`/meta/OpenGraph, and structured data.
 - `scripts/build-repos.sh` + `scripts/repos-filter.jq` — regenerate `repos.json`
   from the GitHub API (non-forks, with a description, not already featured,
   newest 6 by push date).
-- `.github/workflows/refresh-repos.yml` — runs the repos build daily (and on
-  demand) with the authenticated `GITHUB_TOKEN`, committing `repos.json` when it
-  changes. This keeps the grid static so visitors never hit the unauthenticated
-  GitHub API rate limit.
+- `pages-projects.json` — source of truth for the sitemap index: the project Pages
+  sites whose `sitemap.xml` should be aggregated. Generated, not hand-edited.
+- `scripts/build-sitemap-index.mjs` — renders `sitemap-index.xml` from
+  `pages-projects.json` (offline/deterministic; also called by `build-site.mjs`).
+- `scripts/build-pages-projects.sh` — refreshes `pages-projects.json` from the
+  GitHub API: every owner repo with Pages enabled whose site actually **serves a
+  `sitemap.xml`** (probed live, so the index never points at a 404). Additive — a
+  listed project is kept even if a probe fails mid-rollout. Requires `gh`
+  authenticated.
+- `.github/workflows/refresh-repos.yml` — runs the repos build **and** the
+  pages-projects/sitemap-index refresh daily (and on demand) with the
+  authenticated `GITHUB_TOKEN`, committing `repos.json`, `pages-projects.json`, and
+  `sitemap-index.xml` when they change. This keeps the grid static (no
+  unauthenticated rate limits) and the sitemap index current as projects ship.
 
 ## Grid data flow
 

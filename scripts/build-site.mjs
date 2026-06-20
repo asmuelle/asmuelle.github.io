@@ -15,6 +15,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { LANGS, T, KNOWS_LANGUAGE } from "./i18n.mjs";
+import { loadProjects, renderSitemapIndex } from "./build-sitemap-index.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const BASE = "https://asmuelle.github.io";
@@ -606,7 +607,7 @@ function robots() {
 # AI / answer engines are explicitly welcomed (GEO): being cited is the goal.
 ${blocks.join("\n\n")}
 
-Sitemap: ${BASE}/sitemap.xml
+Sitemap: ${BASE}/sitemap-index.xml
 `;
 }
 
@@ -660,6 +661,7 @@ for (const lang of LANGS) {
   written.push(write(rel, page(lang)));
 }
 written.push(write("sitemap.xml", sitemap()));
+written.push(write("sitemap-index.xml", renderSitemapIndex(loadProjects(), BUILD_DATE)));
 written.push(write("robots.txt", robots()));
 written.push(write("llms.txt", llmsTxt()));
 written.push(write(".nojekyll", ""));

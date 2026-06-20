@@ -1,7 +1,9 @@
-name: Refresh repos.json
+name: Refresh repos.json + sitemap index
 
-# Keeps the "Also on GitHub" grid static (no client-side API rate limits) by
-# regenerating repos.json from the authenticated GitHub API on a schedule.
+# Two scheduled refreshes from the authenticated GitHub API:
+#   - repos.json         — the static "Also on GitHub" grid (no client-side rate limits)
+#   - pages-projects.json / sitemap-index.xml — root-domain sitemap aggregation
+#     (every project Pages site that serves a sitemap, probed live)
 on:
   schedule:
     - cron: "17 6 * * *"   # daily, 06:17 UTC
@@ -11,6 +13,8 @@ on:
     paths:
       - "scripts/build-repos.sh"
       - "scripts/repos-filter.jq"
+      - "scripts/build-pages-projects.sh"
+      - "scripts/build-sitemap-index.mjs"
       - ".github/workflows/refresh-repos.yml"
 
 permissions:
@@ -31,14 +35,21 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bash scripts/build-repos.sh
 
+      - name: Regenerate pages-projects.json + sitemap-index.xml
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bash scripts/build-pages-projects.sh
+          node scripts/build-sitemap-index.mjs
+
       - name: Commit if changed
         run: |
-          if git diff --quiet -- repos.json; then
-            echo "No changes to repos.json."
+          if git diff --quiet -- repos.json pages-projects.json sitemap-index.xml; then
+            echo "No changes."
             exit 0
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add repos.json
-          git commit -m "chore: refresh repos.json"
+          git add repos.json pages-projects.json sitemap-index.xml
+          git commit -m "chore: refresh repos.json + sitemap index"
           git push
