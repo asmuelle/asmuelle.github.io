@@ -1,0 +1,40 @@
+# Andreas Müller
+
+> Rust / Java / JavaScript developer based at Lake Constance, Germany. I build native
+> macOS & iPadOS apps over memory-safe Rust cores (bridged to Swift with UniFFI), deep
+> PostgreSQL & SSH tooling, and cargo/CI developer tools. Available for consulting.
+
+## Profile
+- Website: https://asmuelle.github.io/
+- GitHub: https://github.com/asmuelle
+- crates.io: https://crates.io/users/asmuelle
+- Company: https://kwiqly.com (kWIQly)
+- LinkedIn: https://www.linkedin.com/in/andreas-m%C3%BCller-1692989
+- Contact: herban.mueller@gmail.com
+- On GitHub since 2010
+- Languages: German, English, French, Spanish, Portuguese, Norwegian, Swedish, Danish, Russian, Chinese
+
+## Services
+- Rust cores for native apps — performance/safety-critical logic in a memory-safe Rust core, bridged to Swift via UniFFI, shared across macOS and iPadOS.
+- PostgreSQL & SSH tooling — transactional-safe DDL, ERDs, SFTP and monitoring; native, fast, reliable.
+- Rust CI & developer tooling — cargo/CI tools for safer Rust: dependency-impact gating, diff risk scoring, spec-drift detection.
+
+## Selected projects
+- pgAgent (https://github.com/asmuelle/agent-postgres): native macOS & iPadOS workspace for PostgreSQL & SSH — routine editor, transactional-safe DDL, ERD, dual-pane SFTP, on-device AI. SwiftUI + AppKit over a Rust core via UniFFI. Live: https://asmuelle.github.io/agent-postgres/
+- agent-ssh (https://github.com/asmuelle/agent-ssh): native macOS & iPadOS SSH workspace — terminal, SFTP, PostgreSQL, monitoring and network tools over a memory-safe Rust core bridged to Swift.
+- ssh-commander-core (https://github.com/asmuelle/ssh-commander-core): async Rust domain layer — SSH, SFTP, FTP/FTPS, PostgreSQL and connection management, published to crates.io.
+- r-shell (https://github.com/asmuelle/r-shell): lightweight open-source SSH/SFTP/FTP client in Rust & Tauri 2 — split terminals, SFTP, GPU monitoring. ~34 MB RAM.
+- cargo-impact (https://github.com/asmuelle/cargo-impact): dependency-impact analysis for Rust — SARIF code-scanning and sticky PR comments, with a ready-made GitHub Action.
+- cargo/CI tooling: diff-risk, spec-drift, cargo-context, ai-tools-core.
+
+## Localized versions
+- English: https://asmuelle.github.io/
+- Deutsch: https://asmuelle.github.io/de/
+- Français: https://asmuelle.github.io/fr/
+- Español: https://asmuelle.github.io/es/
+- Português: https://asmuelle.github.io/pt/
+- Norsk: https://asmuelle.github.io/nb/
+- Svenska: https://asmuelle.github.io/sv/
+- Dansk: https://asmuelle.github.io/da/
+- Русский: https://asmuelle.github.io/ru/
+- 简体中文: https://asmuelle.github.io/zh/
