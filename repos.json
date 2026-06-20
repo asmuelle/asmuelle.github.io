@@ -1,19 +1,11 @@
 [
   {
-    "name": "tenderhook",
-    "description": "Procurement radar for SMB government contractors: a daily agent over SAM.gov, state/local portals, and buyer budget docs maintains living dossiers per agency and opportunity — matching tenders to your capabilities, red-lining amendments, flagging expiring incumbents.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/tenderhook",
-    "pushed_at": "2026-06-19T23:17:18Z"
-  },
-  {
     "name": "stringer",
     "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/stringer",
-    "pushed_at": "2026-06-19T23:17:15Z"
+    "pushed_at": "2026-06-20T20:06:23Z"
   },
   {
     "name": "statutory",
@@ -21,7 +13,7 @@
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/statutory",
-    "pushed_at": "2026-06-19T23:17:13Z"
+    "pushed_at": "2026-06-20T20:06:21Z"
   },
   {
     "name": "regdelta",
@@ -29,7 +21,7 @@
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/regdelta",
-    "pushed_at": "2026-06-19T23:17:10Z"
+    "pushed_at": "2026-06-20T20:06:19Z"
   },
   {
     "name": "perennial",
@@ -37,7 +29,7 @@
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/perennial",
-    "pushed_at": "2026-06-19T23:17:07Z"
+    "pushed_at": "2026-06-20T20:06:17Z"
   },
   {
     "name": "parlo",
@@ -45,6 +37,14 @@
     "language": "Swift",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/parlo",
-    "pushed_at": "2026-06-19T23:17:05Z"
+    "pushed_at": "2026-06-20T20:06:15Z"
+  },
+  {
+    "name": "kinsight",
+    "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
+    "language": "Kotlin",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/kinsight",
+    "pushed_at": "2026-06-20T20:06:13Z"
   }
 ]
