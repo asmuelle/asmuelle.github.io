@@ -318,7 +318,7 @@ function page(lang) {
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="google-site-verification" content="btgyD0tshe2234IP3e9vFOWHkrixfIWicSQNOyt9RbM" />
+<meta name="google-site-verification" content="8N30uuYpSL17VUxhpmFa4zXbO37LAcjHdlqbA8jiVJM" />
 <title>${escText(t("meta.title"))}</title>
 <meta name="description" content="${escAttr(t("meta.description"))}" />
 <meta name="author" content="Andreas Müller" />
