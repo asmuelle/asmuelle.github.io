@@ -53,7 +53,8 @@ const PROJECTS = [
            { key: "acts.code", href: "https://github.com/asmuelle/agent-postgres" }] },
   { name: "agent-ssh", key: "proj.agentssh",
     chips: ["SwiftUI", "SwiftTerm", "Rust"],
-    acts: [{ key: "acts.code", href: "https://github.com/asmuelle/agent-ssh" }] },
+    acts: [{ key: "acts.live", href: "https://asmuelle.github.io/agent-ssh/" },
+           { key: "acts.code", href: "https://github.com/asmuelle/agent-ssh" }] },
   { name: "ssh-commander-core", key: "proj.core",
     chips: ["Rust", "async", "crates.io"],
     acts: [{ key: "acts.code", href: "https://github.com/asmuelle/ssh-commander-core" }] },
@@ -317,6 +318,7 @@ function page(lang) {
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="btgyD0tshe2234IP3e9vFOWHkrixfIWicSQNOyt9RbM" />
 <title>${escText(t("meta.title"))}</title>
 <meta name="description" content="${escAttr(t("meta.description"))}" />
 <meta name="author" content="Andreas Müller" />
