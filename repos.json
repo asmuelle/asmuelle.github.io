@@ -1,19 +1,19 @@
 [
   {
-    "name": "flank",
-    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/flank",
-    "pushed_at": "2026-06-20T22:30:13Z"
-  },
-  {
     "name": "inward",
     "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
     "language": "Swift",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/inward",
-    "pushed_at": "2026-06-20T21:37:19Z"
+    "pushed_at": "2026-06-22T07:41:50Z"
+  },
+  {
+    "name": "flank",
+    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/flank",
+    "pushed_at": "2026-06-21T14:32:14Z"
   },
   {
     "name": "selene",

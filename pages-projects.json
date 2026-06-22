@@ -1,8 +1,8 @@
 [
   { "slug": "agent-postgres", "lastmod": "2026-06-20" },
-  { "slug": "agent-ssh", "lastmod": "2026-06-20" },
+  { "slug": "agent-ssh", "lastmod": "2026-06-21" },
   { "slug": "claimwatch", "lastmod": "2026-06-20" },
-  { "slug": "flank", "lastmod": "2026-06-20" },
+  { "slug": "flank", "lastmod": "2026-06-21" },
   { "slug": "kinsight", "lastmod": "2026-06-20" },
   { "slug": "orchard", "lastmod": "2026-06-20" },
   { "slug": "parlo", "lastmod": "2026-06-20" },

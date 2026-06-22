@@ -4,7 +4,7 @@ Live CI/check status, commit freshness, and open-issue counts across every publi
 repository. Badges refresh automatically; the list is regenerated daily by
 [`refresh-repos.yml`](.github/workflows/refresh-repos.yml).
 
-_Last generated 2026-06-21 · 28 repositories — 18 Pages sites, 10 libraries & tools._
+_Last generated 2026-06-22 · 28 repositories — 18 Pages sites, 10 libraries & tools._
 
 ## 🌐 GitHub Pages sites
 
