@@ -1,5 +1,13 @@
 [
   {
+    "name": "ibrief",
+    "description": "Selbstverbesserndes, personalisiertes Morning Briefing — lokal-first in Rust mit lokalen LLMs. Lernt Gewichte, Prompts und Quellen; Anti-Blase by design.",
+    "language": "Rust",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/ibrief",
+    "pushed_at": "2026-06-29T05:26:19Z"
+  },
+  {
     "name": "stringer",
     "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
     "language": "TypeScript",
@@ -38,13 +46,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/statutory",
     "pushed_at": "2026-06-27T11:22:26Z"
-  },
-  {
-    "name": "keepers",
-    "description": "AI photo culling that scores, blink-checks, groups, and shortlists a 3,000-shot session on the phone itself — Aftershoot power without the desktop or the $30/month.",
-    "language": "Swift",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/keepers",
-    "pushed_at": "2026-06-27T11:02:24Z"
   }
 ]
