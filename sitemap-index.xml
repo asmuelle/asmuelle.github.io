@@ -2,11 +2,11 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://asmuelle.github.io/sitemap.xml</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/agent-postgres/sitemap.xml</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/agent-ssh/sitemap.xml</loc>
@@ -14,11 +14,11 @@
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/claimwatch/sitemap.xml</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/flank/sitemap.xml</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/ibrief/sitemap.xml</loc>
@@ -54,7 +54,7 @@
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/tenderhook/sitemap.xml</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-01</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/tripwire/sitemap.xml</loc>
