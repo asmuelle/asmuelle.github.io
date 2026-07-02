@@ -1,27 +1,11 @@
 [
   {
-    "name": "flank",
-    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
-    "language": "TypeScript",
+    "name": "incompliance-radar",
+    "description": "AI-powered platform for tracking global compliance monitorships, DPAs, and NPAs",
+    "language": "Rust",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/flank",
-    "pushed_at": "2026-07-01T07:46:54Z"
-  },
-  {
-    "name": "claimwatch",
-    "description": "Patent & IP radar for IP-heavy startups: a weekly agent over USPTO/EPO/WIPO feeds maintains living dossiers per technology area and competitor — alerting on new filings, claim amendments, assignments, and lapses, every assertion checkable against the source.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/claimwatch",
-    "pushed_at": "2026-07-01T07:44:44Z"
-  },
-  {
-    "name": "inward",
-    "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
-    "language": "Swift",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/inward",
-    "pushed_at": "2026-07-01T07:43:48Z"
+    "html_url": "https://github.com/asmuelle/incompliance-radar",
+    "pushed_at": "2026-07-02T05:31:31Z"
   },
   {
     "name": "ibrief",
@@ -29,22 +13,38 @@
     "language": "Rust",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/ibrief",
-    "pushed_at": "2026-06-29T11:27:28Z"
+    "pushed_at": "2026-07-01T22:21:25Z"
   },
   {
-    "name": "stringer",
-    "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
-    "language": "TypeScript",
+    "name": "keepers",
+    "description": "AI photo culling that scores, blink-checks, groups, and shortlists a 3,000-shot session on the phone itself — Aftershoot power without the desktop or the $30/month.",
+    "language": "Swift",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/stringer",
-    "pushed_at": "2026-06-27T18:22:24Z"
+    "html_url": "https://github.com/asmuelle/keepers",
+    "pushed_at": "2026-07-01T08:11:22Z"
   },
   {
-    "name": "regdelta",
-    "description": "A living, citation-pinned obligation map for SME compliance teams: an agent watches regulators in your jurisdictions daily and maintains an always-current, audit-ready wiki of what changed, who it affects, and what you must do by when.",
+    "name": "selene",
+    "description": "A cycle, fertility, and perimenopause tracker whose AI insight engine runs entirely on-device — no server to subpoena, breach, or sell data from, verifiable in airplane mode.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/selene",
+    "pushed_at": "2026-07-01T08:10:53Z"
+  },
+  {
+    "name": "sitescribe",
+    "description": "Offline AI field-documentation copilot: photograph, dictate, and auto-generate structured inspection reports, receipts, and job records at zero signal, syncing when coverage returns.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/sitescribe",
+    "pushed_at": "2026-07-01T07:55:52Z"
+  },
+  {
+    "name": "flank",
+    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
     "language": "TypeScript",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/regdelta",
-    "pushed_at": "2026-06-27T11:32:24Z"
+    "html_url": "https://github.com/asmuelle/flank",
+    "pushed_at": "2026-07-01T07:46:54Z"
   }
 ]

@@ -4,7 +4,7 @@ Live CI/check status, commit freshness, and open-issue counts across every publi
 repository. Badges refresh automatically; the list is regenerated daily by
 [`refresh-repos.yml`](.github/workflows/refresh-repos.yml).
 
-_Last generated 2026-07-01 · 29 repositories — 19 Pages sites, 10 libraries & tools._
+_Last generated 2026-07-02 · 30 repositories — 20 Pages sites, 10 libraries & tools._
 
 ## 🌐 GitHub Pages sites
 
@@ -15,6 +15,7 @@ _Last generated 2026-07-01 · 29 repositories — 19 Pages sites, 10 libraries &
 | [claimwatch](https://github.com/asmuelle/claimwatch) | ![CI](https://img.shields.io/github/check-runs/asmuelle/claimwatch/main?style=flat-square&label=CI) | ![last commit](https://img.shields.io/github/last-commit/asmuelle/claimwatch?style=flat-square) | ![issues](https://img.shields.io/github/issues/asmuelle/claimwatch?style=flat-square) | [site ↗](https://asmuelle.github.io/claimwatch/) |
 | [flank](https://github.com/asmuelle/flank) | ![CI](https://img.shields.io/github/check-runs/asmuelle/flank/main?style=flat-square&label=CI) | ![last commit](https://img.shields.io/github/last-commit/asmuelle/flank?style=flat-square) | ![issues](https://img.shields.io/github/issues/asmuelle/flank?style=flat-square) | [site ↗](https://asmuelle.github.io/flank/) |
 | [ibrief](https://github.com/asmuelle/ibrief) | ![CI](https://img.shields.io/github/check-runs/asmuelle/ibrief/main?style=flat-square&label=CI) | ![last commit](https://img.shields.io/github/last-commit/asmuelle/ibrief?style=flat-square) | ![issues](https://img.shields.io/github/issues/asmuelle/ibrief?style=flat-square) | [site ↗](https://asmuelle.github.io/ibrief/) |
+| [incompliance-radar](https://github.com/asmuelle/incompliance-radar) | ![CI](https://img.shields.io/github/check-runs/asmuelle/incompliance-radar/main?style=flat-square&label=CI) | ![last commit](https://img.shields.io/github/last-commit/asmuelle/incompliance-radar?style=flat-square) | ![issues](https://img.shields.io/github/issues/asmuelle/incompliance-radar?style=flat-square) | [site ↗](https://asmuelle.github.io/incompliance-radar/) |
 | [inward](https://github.com/asmuelle/inward) | ![CI](https://img.shields.io/github/check-runs/asmuelle/inward/main?style=flat-square&label=CI) | ![last commit](https://img.shields.io/github/last-commit/asmuelle/inward?style=flat-square) | ![issues](https://img.shields.io/github/issues/asmuelle/inward?style=flat-square) | [site ↗](https://asmuelle.github.io/inward/) |
 | [keepers](https://github.com/asmuelle/keepers) | ![CI](https://img.shields.io/github/check-runs/asmuelle/keepers/main?style=flat-square&label=CI) | ![last commit](https://img.shields.io/github/last-commit/asmuelle/keepers?style=flat-square) | ![issues](https://img.shields.io/github/issues/asmuelle/keepers?style=flat-square) | [site ↗](https://asmuelle.github.io/keepers/) |
 | [kinsight](https://github.com/asmuelle/kinsight) | ![CI](https://img.shields.io/github/check-runs/asmuelle/kinsight/main?style=flat-square&label=CI) | ![last commit](https://img.shields.io/github/last-commit/asmuelle/kinsight?style=flat-square) | ![issues](https://img.shields.io/github/issues/asmuelle/kinsight?style=flat-square) | [site ↗](https://asmuelle.github.io/kinsight/) |
