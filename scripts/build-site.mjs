@@ -75,7 +75,8 @@ const PROJECTS = [
 ];
 
 const SERVICES = [{ t: "svc.rust.t", d: "svc.rust.d" }, { t: "svc.db.t", d: "svc.db.d" }, { t: "svc.ci.t", d: "svc.ci.d" }];
-const FAQ = [["faq.q1", "faq.a1"], ["faq.q2", "faq.a2"], ["faq.q3", "faq.a3"], ["faq.q4", "faq.a4"]];
+const PROCESS = [{ n: "01", t: "proc.1.t", d: "proc.1.d" }, { n: "02", t: "proc.2.t", d: "proc.2.d" }, { n: "03", t: "proc.3.t", d: "proc.3.d" }];
+const FAQ = [["faq.q1", "faq.a1"], ["faq.q5", "faq.a5"], ["faq.q6", "faq.a6"], ["faq.q2", "faq.a2"], ["faq.q3", "faq.a3"], ["faq.q4", "faq.a4"]];
 
 // Software entities for structured data (entity association, not visual).
 const SOFTWARE = [
@@ -95,10 +96,10 @@ function jsonLd(lang, t) {
     name: "Andreas Müller",
     url: `${BASE}/`,
     image: AVATAR,
-    jobTitle: "Rust / Java / JavaScript Developer",
+    jobTitle: "Freelance Software Engineer — Rust, Swift & Native Apps",
     description: t("meta.ogdesc"),
     email: `mailto:${EMAIL}`,
-    knowsAbout: ["Rust", "Swift", "TypeScript", "Java", "PostgreSQL", "macOS app development", "iPadOS app development", "Developer tooling", "SSH tooling"],
+    knowsAbout: ["Rust", "Swift", "TypeScript", "Java", "PostgreSQL", "macOS app development", "iPadOS app development", "Developer tooling", "SSH tooling", "Rust consulting", "Freelance software development"],
     knowsLanguage: KNOWS_LANGUAGE,
     worksFor: { "@type": "Organization", name: "kWIQly", url: "https://kwiqly.com" },
     address: { "@type": "PostalAddress", addressRegion: "Lake Constance", addressCountry: "DE" },
@@ -305,6 +306,13 @@ function page(lang) {
           <p>${escText(t(s.d))}</p>
         </article>`
   ).join("\n");
+  const process = PROCESS.map(
+    (s) => `        <article class="svc step reveal">
+          <span class="num" aria-hidden="true">${escText(s.n)}</span>
+          <h3>${escText(t(s.t))}</h3>
+          <p>${escText(t(s.d))}</p>
+        </article>`
+  ).join("\n");
   const faq = FAQ.map(
     ([q, a]) => `        <article class="faq-item reveal">
           <h3>${escText(t(q))}</h3>
@@ -454,6 +462,19 @@ ${jsonLd(lang, t)}
   .svc::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--grad);opacity:.6;}
   .svc h3{font-size:1.04rem;font-weight:650;letter-spacing:-.01em;margin:6px 0 8px;}
   .svc p{color:var(--muted);font-size:.92rem;margin:0;}
+  .svc .num{display:block;font-family:var(--mono);font-size:.78rem;font-weight:600;color:var(--cyan);letter-spacing:.08em;margin:2px 0 2px;}
+
+  /* contact cta */
+  .cta{text-align:center;border:1px solid var(--line-strong);border-radius:var(--r);
+    padding:clamp(32px,5vw,56px) clamp(20px,4vw,48px);position:relative;overflow:hidden;
+    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008));}
+  .cta::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--grad);opacity:.7;}
+  .cta .kicker{margin-bottom:8px;}
+  .cta-text{color:var(--muted);max-width:58ch;margin:14px auto 24px;}
+  .cta .links{justify-content:center;}
+  .cta-mail{margin:18px 0 0;font-family:var(--mono);font-size:.85rem;}
+  .cta-mail a{color:var(--cyan);}
+  .cta-mail a:hover{text-decoration:underline;}
 
   /* faq */
   .faq-list{display:grid;gap:12px;}
@@ -552,6 +573,19 @@ ${projects}
     </div>
   </section>
 
+  <!-- Process -->
+  <section id="process">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">${escText(t("proc.kicker"))}</p>
+        <h2>${escText(t("proc.title"))}</h2>
+      </div>
+      <div class="svc-grid">
+${process}
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="faq">
     <div class="wrap">
@@ -564,12 +598,30 @@ ${faq}
       </div>
     </div>
   </section>
+
+  <!-- Contact CTA -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta reveal">
+        <p class="kicker">${escText(t("cta.kicker"))}</p>
+        <h2>${escText(t("cta.title"))}</h2>
+        <p class="cta-text">${escText(t("cta.text"))}</p>
+        <div class="links">
+          <a class="btn primary" href="${MAILTO}">${escText(t("cta.btn"))}</a>
+          <a class="btn" href="${LINKEDIN}" rel="noopener">LinkedIn ↗</a>
+        </div>
+        <p class="cta-mail"><a href="mailto:${EMAIL}">${EMAIL}</a></p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
   <div class="wrap foot-row">
     <span>© <span id="yr"></span> Andreas Müller</span>
     <span class="sp"></span>
+    <a href="mailto:${EMAIL}">${EMAIL}</a>
+    <span>·</span>
     <a href="https://github.com/asmuelle" rel="noopener">github.com/asmuelle</a>
     <span>·</span>
     <a href="https://kwiqly.com" rel="noopener">kwiqly.com</a>
@@ -617,9 +669,10 @@ function llmsTxt() {
   const langList = LANGS.map((l) => `- ${l.autonym}: ${urlFor(l)}`).join("\n");
   return `# Andreas Müller
 
-> Rust / Java / JavaScript developer based at Lake Constance, Germany. I build native
-> macOS & iPadOS apps over memory-safe Rust cores (bridged to Swift with UniFFI), deep
-> PostgreSQL & SSH tooling, and cargo/CI developer tools. Available for consulting.
+> Freelance software engineer (Rust, Swift, TypeScript, Java) based at Lake Constance,
+> Germany. I build native macOS & iPadOS apps over memory-safe Rust cores (bridged to
+> Swift with UniFFI), deep PostgreSQL & SSH tooling, and cargo/CI developer tools.
+> Available for remote consulting engagements.
 
 ## Profile
 - Website: ${BASE}/
@@ -635,6 +688,12 @@ function llmsTxt() {
 - Rust cores for native apps — performance/safety-critical logic in a memory-safe Rust core, bridged to Swift via UniFFI, shared across macOS and iPadOS.
 - PostgreSQL & SSH tooling — transactional-safe DDL, ERDs, SFTP and monitoring; native, fast, reliable.
 - Rust CI & developer tooling — cargo/CI tools for safer Rust: dependency-impact gating, diff risk scoring, spec-drift detection.
+
+## Engagement
+- Remote, milestone-based freelance engagements; direct communication, no intermediaries.
+- Typical start: a small, fixed-scope first milestone (prototype, audit, or one shippable feature).
+- Works inside existing codebases and teams — incremental Rust adoption, PostgreSQL hardening, CI guardrails.
+- Handover includes documentation, tests and CI.
 
 ## Selected projects
 - pgAgent (${"https://github.com/asmuelle/agent-postgres"}): native macOS & iPadOS workspace for PostgreSQL & SSH — routine editor, transactional-safe DDL, ERD, dual-pane SFTP, on-device AI. SwiftUI + AppKit over a Rust core via UniFFI. Live: https://asmuelle.github.io/agent-postgres/

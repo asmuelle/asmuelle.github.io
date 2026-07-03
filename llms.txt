@@ -1,8 +1,9 @@
 # Andreas Müller
 
-> Rust / Java / JavaScript developer based at Lake Constance, Germany. I build native
-> macOS & iPadOS apps over memory-safe Rust cores (bridged to Swift with UniFFI), deep
-> PostgreSQL & SSH tooling, and cargo/CI developer tools. Available for consulting.
+> Freelance software engineer (Rust, Swift, TypeScript, Java) based at Lake Constance,
+> Germany. I build native macOS & iPadOS apps over memory-safe Rust cores (bridged to
+> Swift with UniFFI), deep PostgreSQL & SSH tooling, and cargo/CI developer tools.
+> Available for remote consulting engagements.
 
 ## Profile
 - Website: https://asmuelle.github.io/
@@ -18,6 +19,12 @@
 - Rust cores for native apps — performance/safety-critical logic in a memory-safe Rust core, bridged to Swift via UniFFI, shared across macOS and iPadOS.
 - PostgreSQL & SSH tooling — transactional-safe DDL, ERDs, SFTP and monitoring; native, fast, reliable.
 - Rust CI & developer tooling — cargo/CI tools for safer Rust: dependency-impact gating, diff risk scoring, spec-drift detection.
+
+## Engagement
+- Remote, milestone-based freelance engagements; direct communication, no intermediaries.
+- Typical start: a small, fixed-scope first milestone (prototype, audit, or one shippable feature).
+- Works inside existing codebases and teams — incremental Rust adoption, PostgreSQL hardening, CI guardrails.
+- Handover includes documentation, tests and CI.
 
 ## Selected projects
 - pgAgent (https://github.com/asmuelle/agent-postgres): native macOS & iPadOS workspace for PostgreSQL & SSH — routine editor, transactional-safe DDL, ERD, dual-pane SFTP, on-device AI. SwiftUI + AppKit over a Rust core via UniFFI. Live: https://asmuelle.github.io/agent-postgres/
