@@ -5,46 +5,46 @@
     "language": "Swift",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/inward",
-    "pushed_at": "2026-07-04T07:00:01Z"
+    "pushed_at": "2026-07-05T09:18:14Z"
   },
   {
-    "name": "perennial",
-    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
+    "name": "stringer",
+    "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
     "language": "TypeScript",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/perennial",
-    "pushed_at": "2026-07-04T02:44:26Z"
+    "html_url": "https://github.com/asmuelle/stringer",
+    "pushed_at": "2026-07-04T18:24:36Z"
   },
   {
-    "name": "claimwatch",
-    "description": "Patent & IP radar for IP-heavy startups: a weekly agent over USPTO/EPO/WIPO feeds maintains living dossiers per technology area and competitor — alerting on new filings, claim amendments, assignments, and lapses, every assertion checkable against the source.",
+    "name": "flank",
+    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
     "language": "TypeScript",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/claimwatch",
-    "pushed_at": "2026-07-04T02:14:47Z"
+    "html_url": "https://github.com/asmuelle/flank",
+    "pushed_at": "2026-07-04T14:25:42Z"
   },
   {
-    "name": "ibrief",
-    "description": "Selbstverbesserndes, personalisiertes Morning Briefing — lokal-first in Rust mit lokalen LLMs. Lernt Gewichte, Prompts und Quellen; Anti-Blase by design.",
-    "language": "Rust",
+    "name": "regdelta",
+    "description": "A living, citation-pinned obligation map for SME compliance teams: an agent watches regulators in your jurisdictions daily and maintains an always-current, audit-ready wiki of what changed, who it affects, and what you must do by when.",
+    "language": "TypeScript",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/ibrief",
-    "pushed_at": "2026-07-03T14:26:00Z"
+    "html_url": "https://github.com/asmuelle/regdelta",
+    "pushed_at": "2026-07-04T14:15:52Z"
   },
   {
-    "name": "incompliance-radar",
-    "description": "AI-powered platform for tracking global compliance monitorships, DPAs, and NPAs",
-    "language": "Rust",
+    "name": "statutory",
+    "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
+    "language": "TypeScript",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/incompliance-radar",
-    "pushed_at": "2026-07-02T05:31:31Z"
+    "html_url": "https://github.com/asmuelle/statutory",
+    "pushed_at": "2026-07-04T11:24:49Z"
   },
   {
-    "name": "keepers",
-    "description": "AI photo culling that scores, blink-checks, groups, and shortlists a 3,000-shot session on the phone itself — Aftershoot power without the desktop or the $30/month.",
-    "language": "Swift",
+    "name": "kinsight",
+    "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
+    "language": "Kotlin",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/keepers",
-    "pushed_at": "2026-07-01T08:11:22Z"
+    "html_url": "https://github.com/asmuelle/kinsight",
+    "pushed_at": "2026-07-04T10:22:37Z"
   }
 ]
