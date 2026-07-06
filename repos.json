@@ -1,11 +1,11 @@
 [
   {
-    "name": "inward",
-    "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
-    "language": "Swift",
+    "name": "ibrief",
+    "description": "Selbstverbesserndes, personalisiertes Morning Briefing — lokal-first in Rust mit lokalen LLMs. Lernt Gewichte, Prompts und Quellen; Anti-Blase by design.",
+    "language": "Rust",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/inward",
-    "pushed_at": "2026-07-05T09:18:14Z"
+    "html_url": "https://github.com/asmuelle/ibrief",
+    "pushed_at": "2026-07-05T17:44:48Z"
   },
   {
     "name": "stringer",
@@ -13,7 +13,15 @@
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/stringer",
-    "pushed_at": "2026-07-04T18:24:36Z"
+    "pushed_at": "2026-07-05T14:54:32Z"
+  },
+  {
+    "name": "inward",
+    "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/inward",
+    "pushed_at": "2026-07-05T10:12:44Z"
   },
   {
     "name": "flank",
@@ -38,13 +46,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/statutory",
     "pushed_at": "2026-07-04T11:24:49Z"
-  },
-  {
-    "name": "kinsight",
-    "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
-    "language": "Kotlin",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/kinsight",
-    "pushed_at": "2026-07-04T10:22:37Z"
   }
 ]
