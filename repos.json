@@ -1,5 +1,21 @@
 [
   {
+    "name": "incompliance-radar",
+    "description": "AI-powered platform for tracking global compliance monitorships, DPAs, and NPAs",
+    "language": "Rust",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/incompliance-radar",
+    "pushed_at": "2026-07-09T08:35:19Z"
+  },
+  {
+    "name": "sitescribe",
+    "description": "Offline AI field-documentation copilot: photograph, dictate, and auto-generate structured inspection reports, receipts, and job records at zero signal, syncing when coverage returns.",
+    "language": "Swift",
+    "stargazers_count": 1,
+    "html_url": "https://github.com/asmuelle/sitescribe",
+    "pushed_at": "2026-07-08T15:49:02Z"
+  },
+  {
     "name": "ibrief",
     "description": "Selbstverbesserndes, personalisiertes Morning Briefing — lokal-first in Rust mit lokalen LLMs. Lernt Gewichte, Prompts und Quellen; Anti-Blase by design.",
     "language": "Rust",
@@ -30,21 +46,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/flank",
     "pushed_at": "2026-07-04T14:25:42Z"
-  },
-  {
-    "name": "regdelta",
-    "description": "A living, citation-pinned obligation map for SME compliance teams: an agent watches regulators in your jurisdictions daily and maintains an always-current, audit-ready wiki of what changed, who it affects, and what you must do by when.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/regdelta",
-    "pushed_at": "2026-07-04T14:15:52Z"
-  },
-  {
-    "name": "statutory",
-    "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/statutory",
-    "pushed_at": "2026-07-04T11:24:49Z"
   }
 ]
