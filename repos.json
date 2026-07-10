@@ -1,5 +1,13 @@
 [
   {
+    "name": "inward",
+    "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/inward",
+    "pushed_at": "2026-07-09T13:10:59Z"
+  },
+  {
     "name": "incompliance-radar",
     "description": "AI-powered platform for tracking global compliance monitorships, DPAs, and NPAs",
     "language": "Rust",
@@ -30,14 +38,6 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/stringer",
     "pushed_at": "2026-07-05T14:54:32Z"
-  },
-  {
-    "name": "inward",
-    "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
-    "language": "Swift",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/inward",
-    "pushed_at": "2026-07-05T10:12:44Z"
   },
   {
     "name": "flank",
