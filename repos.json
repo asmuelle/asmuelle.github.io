@@ -1,5 +1,37 @@
 [
   {
+    "name": "perennial",
+    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/perennial",
+    "pushed_at": "2026-07-11T02:44:36Z"
+  },
+  {
+    "name": "claimwatch",
+    "description": "Patent & IP radar for IP-heavy startups: a weekly agent over USPTO/EPO/WIPO feeds maintains living dossiers per technology area and competitor — alerting on new filings, claim amendments, assignments, and lapses, every assertion checkable against the source.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/claimwatch",
+    "pushed_at": "2026-07-11T02:15:05Z"
+  },
+  {
+    "name": "orchard",
+    "description": "Decentralized, privacy-preserving swarm-intelligence network powered by idle Apple devices (Foundation Models + Neural Engine).",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/orchard",
+    "pushed_at": "2026-07-10T16:00:33Z"
+  },
+  {
+    "name": "keepers",
+    "description": "AI photo culling that scores, blink-checks, groups, and shortlists a 3,000-shot session on the phone itself — Aftershoot power without the desktop or the $30/month.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/keepers",
+    "pushed_at": "2026-07-10T15:56:40Z"
+  },
+  {
     "name": "inward",
     "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
     "language": "Swift",
@@ -14,37 +46,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/incompliance-radar",
     "pushed_at": "2026-07-09T08:35:19Z"
-  },
-  {
-    "name": "sitescribe",
-    "description": "Offline AI field-documentation copilot: photograph, dictate, and auto-generate structured inspection reports, receipts, and job records at zero signal, syncing when coverage returns.",
-    "language": "Swift",
-    "stargazers_count": 1,
-    "html_url": "https://github.com/asmuelle/sitescribe",
-    "pushed_at": "2026-07-08T15:49:02Z"
-  },
-  {
-    "name": "ibrief",
-    "description": "Selbstverbesserndes, personalisiertes Morning Briefing — lokal-first in Rust mit lokalen LLMs. Lernt Gewichte, Prompts und Quellen; Anti-Blase by design.",
-    "language": "Rust",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/ibrief",
-    "pushed_at": "2026-07-05T17:44:48Z"
-  },
-  {
-    "name": "stringer",
-    "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/stringer",
-    "pushed_at": "2026-07-05T14:54:32Z"
-  },
-  {
-    "name": "flank",
-    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/flank",
-    "pushed_at": "2026-07-04T14:25:42Z"
   }
 ]
