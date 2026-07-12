@@ -1,16 +1,16 @@
 [
-  { "slug": "agent-postgres", "lastmod": "2026-07-10" },
-  { "slug": "agent-ssh", "lastmod": "2026-07-05" },
+  { "slug": "agent-postgres", "lastmod": "2026-07-11" },
+  { "slug": "agent-ssh", "lastmod": "2026-07-11" },
   { "slug": "claimwatch", "lastmod": "2026-07-11" },
-  { "slug": "flank", "lastmod": "2026-07-04" },
+  { "slug": "flank", "lastmod": "2026-07-11" },
   { "slug": "ibrief", "lastmod": "2026-07-05" },
   { "slug": "kinsight", "lastmod": "2026-07-04" },
   { "slug": "orchard", "lastmod": "2026-07-10" },
   { "slug": "parlo", "lastmod": "2026-06-27" },
   { "slug": "perennial", "lastmod": "2026-07-11" },
   { "slug": "regdelta", "lastmod": "2026-07-04" },
-  { "slug": "statutory", "lastmod": "2026-07-04" },
-  { "slug": "stringer", "lastmod": "2026-07-05" },
-  { "slug": "tenderhook", "lastmod": "2026-07-05" },
-  { "slug": "tripwire", "lastmod": "2026-07-04" }
+  { "slug": "statutory", "lastmod": "2026-07-11" },
+  { "slug": "stringer", "lastmod": "2026-07-11" },
+  { "slug": "tenderhook", "lastmod": "2026-07-11" },
+  { "slug": "tripwire", "lastmod": "2026-07-11" }
 ]
