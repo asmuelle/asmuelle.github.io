@@ -1,5 +1,21 @@
 [
   {
+    "name": "perennial",
+    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/perennial",
+    "pushed_at": "2026-07-18T02:42:27Z"
+  },
+  {
+    "name": "claimwatch",
+    "description": "Patent & IP radar for IP-heavy startups: a weekly agent over USPTO/EPO/WIPO feeds maintains living dossiers per technology area and competitor — alerting on new filings, claim amendments, assignments, and lapses, every assertion checkable against the source.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/claimwatch",
+    "pushed_at": "2026-07-18T02:12:28Z"
+  },
+  {
     "name": "flank",
     "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
     "language": "TypeScript",
@@ -24,27 +40,11 @@
     "pushed_at": "2026-07-12T10:28:41Z"
   },
   {
-    "name": "perennial",
-    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/perennial",
-    "pushed_at": "2026-07-12T10:27:48Z"
-  },
-  {
     "name": "statutory",
     "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/statutory",
     "pushed_at": "2026-07-12T10:26:59Z"
-  },
-  {
-    "name": "claimwatch",
-    "description": "Patent & IP radar for IP-heavy startups: a weekly agent over USPTO/EPO/WIPO feeds maintains living dossiers per technology area and competitor — alerting on new filings, claim amendments, assignments, and lapses, every assertion checkable against the source.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/claimwatch",
-    "pushed_at": "2026-07-11T22:23:03Z"
   }
 ]
