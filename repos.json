@@ -1,5 +1,13 @@
 [
   {
+    "name": "perennial",
+    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/perennial",
+    "pushed_at": "2026-07-25T02:43:38Z"
+  },
+  {
     "name": "stringer",
     "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
     "language": "TypeScript",
@@ -38,13 +46,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/kinsight",
     "pushed_at": "2026-07-18T10:29:10Z"
-  },
-  {
-    "name": "perennial",
-    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/perennial",
-    "pushed_at": "2026-07-18T02:42:27Z"
   }
 ]
