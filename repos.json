@@ -1,11 +1,27 @@
 [
   {
-    "name": "perennial",
-    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
+    "name": "flank",
+    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
     "language": "TypeScript",
     "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/perennial",
-    "pushed_at": "2026-07-25T02:43:38Z"
+    "html_url": "https://github.com/asmuelle/flank",
+    "pushed_at": "2026-07-26T07:09:30Z"
+  },
+  {
+    "name": "incompliance-radar",
+    "description": "AI-powered platform for tracking global compliance monitorships, DPAs, and NPAs",
+    "language": "Rust",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/incompliance-radar",
+    "pushed_at": "2026-07-25T19:52:13Z"
+  },
+  {
+    "name": "claimwatch",
+    "description": "Patent & IP radar for IP-heavy startups: a weekly agent over USPTO/EPO/WIPO feeds maintains living dossiers per technology area and competitor — alerting on new filings, claim amendments, assignments, and lapses, every assertion checkable against the source.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/claimwatch",
+    "pushed_at": "2026-07-25T19:51:35Z"
   },
   {
     "name": "stringer",
@@ -13,23 +29,7 @@
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/stringer",
-    "pushed_at": "2026-07-18T18:22:34Z"
-  },
-  {
-    "name": "flank",
-    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/flank",
-    "pushed_at": "2026-07-18T14:25:17Z"
-  },
-  {
-    "name": "regdelta",
-    "description": "A living, citation-pinned obligation map for SME compliance teams: an agent watches regulators in your jurisdictions daily and maintains an always-current, audit-ready wiki of what changed, who it affects, and what you must do by when.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/regdelta",
-    "pushed_at": "2026-07-18T11:32:27Z"
+    "pushed_at": "2026-07-25T18:24:32Z"
   },
   {
     "name": "statutory",
@@ -37,7 +37,7 @@
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/statutory",
-    "pushed_at": "2026-07-18T11:22:28Z"
+    "pushed_at": "2026-07-25T11:23:53Z"
   },
   {
     "name": "kinsight",
@@ -45,6 +45,6 @@
     "language": "Kotlin",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/kinsight",
-    "pushed_at": "2026-07-18T10:29:10Z"
+    "pushed_at": "2026-07-25T10:22:30Z"
   }
 ]
