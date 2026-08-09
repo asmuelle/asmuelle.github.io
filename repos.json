@@ -1,5 +1,21 @@
 [
   {
+    "name": "flank",
+    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/flank",
+    "pushed_at": "2026-08-08T14:23:47Z"
+  },
+  {
+    "name": "statutory",
+    "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/statutory",
+    "pushed_at": "2026-08-08T11:25:29Z"
+  },
+  {
     "name": "perennial",
     "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
     "language": "TypeScript",
@@ -16,28 +32,12 @@
     "pushed_at": "2026-08-01T18:27:10Z"
   },
   {
-    "name": "flank",
-    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/flank",
-    "pushed_at": "2026-08-01T14:28:14Z"
-  },
-  {
     "name": "regdelta",
     "description": "A living, citation-pinned obligation map for SME compliance teams: an agent watches regulators in your jurisdictions daily and maintains an always-current, audit-ready wiki of what changed, who it affects, and what you must do by when.",
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/regdelta",
     "pushed_at": "2026-08-01T11:37:44Z"
-  },
-  {
-    "name": "statutory",
-    "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/statutory",
-    "pushed_at": "2026-08-01T11:27:51Z"
   },
   {
     "name": "kinsight",
