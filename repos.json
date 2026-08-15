@@ -1,5 +1,13 @@
 [
   {
+    "name": "perennial",
+    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/perennial",
+    "pushed_at": "2026-08-15T02:44:57Z"
+  },
+  {
     "name": "flank",
     "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
     "language": "TypeScript",
@@ -14,14 +22,6 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/statutory",
     "pushed_at": "2026-08-08T11:25:29Z"
-  },
-  {
-    "name": "perennial",
-    "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/perennial",
-    "pushed_at": "2026-08-08T02:44:40Z"
   },
   {
     "name": "stringer",
