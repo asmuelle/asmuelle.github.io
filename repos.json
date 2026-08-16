@@ -1,5 +1,21 @@
 [
   {
+    "name": "statutory",
+    "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/statutory",
+    "pushed_at": "2026-08-15T11:25:05Z"
+  },
+  {
+    "name": "kinsight",
+    "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
+    "language": "Kotlin",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/kinsight",
+    "pushed_at": "2026-08-15T10:23:32Z"
+  },
+  {
     "name": "perennial",
     "description": "A literature review that never goes stale: subscribe to a research question and get a versioned, citation-verified survey that ingests each week's papers and flags which claims are now supported, contradicted, or superseded — every reference verified to exist.",
     "language": "TypeScript",
@@ -16,14 +32,6 @@
     "pushed_at": "2026-08-08T14:23:47Z"
   },
   {
-    "name": "statutory",
-    "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/statutory",
-    "pushed_at": "2026-08-08T11:25:29Z"
-  },
-  {
     "name": "stringer",
     "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
     "language": "TypeScript",
@@ -38,13 +46,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/regdelta",
     "pushed_at": "2026-08-01T11:37:44Z"
-  },
-  {
-    "name": "kinsight",
-    "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
-    "language": "Kotlin",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/kinsight",
-    "pushed_at": "2026-08-01T10:26:32Z"
   }
 ]
