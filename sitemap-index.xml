@@ -2,7 +2,7 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://asmuelle.github.io/sitemap.xml</loc>
-    <lastmod>2026-08-29</lastmod>
+    <lastmod>2026-08-30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/agent-postgres/sitemap.xml</loc>
@@ -10,7 +10,7 @@
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/agent-ssh/sitemap.xml</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-08-30</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://asmuelle.github.io/claimwatch/sitemap.xml</loc>
