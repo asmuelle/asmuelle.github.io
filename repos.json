@@ -1,5 +1,13 @@
 [
   {
+    "name": "flank",
+    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/flank",
+    "pushed_at": "2026-09-12T14:25:15Z"
+  },
+  {
     "name": "kinsight",
     "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
     "language": "Kotlin",
@@ -14,14 +22,6 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/perennial",
     "pushed_at": "2026-09-12T02:44:45Z"
-  },
-  {
-    "name": "flank",
-    "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/flank",
-    "pushed_at": "2026-09-10T07:33:25Z"
   },
   {
     "name": "statutory",
