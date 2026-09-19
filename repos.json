@@ -1,5 +1,13 @@
 [
   {
+    "name": "kinsight",
+    "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
+    "language": "Kotlin",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/kinsight",
+    "pushed_at": "2026-09-19T10:22:54Z"
+  },
+  {
     "name": "inward",
     "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
     "language": "Swift",
@@ -14,14 +22,6 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/flank",
     "pushed_at": "2026-09-12T14:25:15Z"
-  },
-  {
-    "name": "kinsight",
-    "description": "Turn any spare phone into an all-local fall & anomaly monitor for aging parents — only text alerts ever leave the device; raw video never exists off it.",
-    "language": "Kotlin",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/kinsight",
-    "pushed_at": "2026-09-12T10:27:08Z"
   },
   {
     "name": "perennial",
