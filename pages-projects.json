@@ -1,8 +1,8 @@
 [
-  { "slug": "agent-postgres", "lastmod": "2026-10-03" },
+  { "slug": "agent-postgres", "lastmod": "2026-10-07" },
   { "slug": "agent-ssh", "lastmod": "2026-10-03" },
   { "slug": "claimwatch", "lastmod": "2026-08-01" },
-  { "slug": "flank", "lastmod": "2026-09-26" },
+  { "slug": "flank", "lastmod": "2026-10-06" },
   { "slug": "ibrief", "lastmod": "2026-07-12" },
   { "slug": "kinsight", "lastmod": "2026-09-19" },
   { "slug": "orchard", "lastmod": "2026-07-10" },
@@ -11,6 +11,6 @@
   { "slug": "regdelta", "lastmod": "2026-08-01" },
   { "slug": "statutory", "lastmod": "2026-09-10" },
   { "slug": "stringer", "lastmod": "2026-09-26" },
-  { "slug": "tenderhook", "lastmod": "2026-09-26" },
+  { "slug": "tenderhook", "lastmod": "2026-10-06" },
   { "slug": "tripwire", "lastmod": "2026-09-10" }
 ]
