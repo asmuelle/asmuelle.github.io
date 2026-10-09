@@ -1,19 +1,27 @@
 [
   {
+    "name": "stringer",
+    "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/stringer",
+    "pushed_at": "2026-10-08T19:18:39Z"
+  },
+  {
+    "name": "parlo",
+    "description": "An AI speaking partner for language learners that runs entirely on the phone — unlimited conversation roleplay and pronunciation feedback, offline, at a quarter of Speak's price.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/parlo",
+    "pushed_at": "2026-10-08T14:56:45Z"
+  },
+  {
     "name": "flank",
     "description": "The living competitor radar for B2B SaaS: always-on agents maintain versioned, citation-pinned dossiers and self-refreshing battlecards per rival, pushing only material deltas — what changed, why it matters, how to respond.",
     "language": "TypeScript",
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/flank",
     "pushed_at": "2026-10-07T22:46:18Z"
-  },
-  {
-    "name": "stringer",
-    "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/stringer",
-    "pushed_at": "2026-09-26T18:24:58Z"
   },
   {
     "name": "kinsight",
@@ -38,13 +46,5 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/perennial",
     "pushed_at": "2026-09-12T02:44:45Z"
-  },
-  {
-    "name": "statutory",
-    "description": "An UpToDate for solo professionals: a living rulebook of the statutes, agency rules, and rates that govern your practice — by state and specialty — with deltas pushed when something changes, plus a ready-to-send client-alert draft.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/statutory",
-    "pushed_at": "2026-09-10T02:42:20Z"
   }
 ]
