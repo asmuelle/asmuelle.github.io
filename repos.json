@@ -1,13 +1,5 @@
 [
   {
-    "name": "stringer",
-    "description": "An always-on research desk for paid-newsletter operators: living beat wikis plus a daily citation-pinned delta brief, deduplicated against everything you've already published.",
-    "language": "TypeScript",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/stringer",
-    "pushed_at": "2026-10-08T19:18:39Z"
-  },
-  {
     "name": "parlo",
     "description": "An AI speaking partner for language learners that runs entirely on the phone — unlimited conversation roleplay and pronunciation feedback, offline, at a quarter of Speak's price.",
     "language": "Swift",
@@ -46,5 +38,13 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/perennial",
     "pushed_at": "2026-09-12T02:44:45Z"
+  },
+  {
+    "name": "regdelta",
+    "description": "A living, citation-pinned obligation map for SME compliance teams: an agent watches regulators in your jurisdictions daily and maintains an always-current, audit-ready wiki of what changed, who it affects, and what you must do by when.",
+    "language": "TypeScript",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/regdelta",
+    "pushed_at": "2026-08-01T11:37:44Z"
   }
 ]
