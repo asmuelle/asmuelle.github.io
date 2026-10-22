@@ -1,5 +1,13 @@
 [
   {
+    "name": "inward",
+    "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
+    "language": "Swift",
+    "stargazers_count": 0,
+    "html_url": "https://github.com/asmuelle/inward",
+    "pushed_at": "2026-10-22T10:42:00Z"
+  },
+  {
     "name": "parlo",
     "description": "An AI speaking partner for language learners that runs entirely on the phone — unlimited conversation roleplay and pronunciation feedback, offline, at a quarter of Speak's price.",
     "language": "Swift",
@@ -22,14 +30,6 @@
     "stargazers_count": 0,
     "html_url": "https://github.com/asmuelle/kinsight",
     "pushed_at": "2026-09-19T10:22:54Z"
-  },
-  {
-    "name": "inward",
-    "description": "A voice-first journaling and reflection companion, verifiably airplane-mode functional — spoken thoughts are transcribed, reflected on, and stored only on the phone. Zero network in the journaling path.",
-    "language": "Swift",
-    "stargazers_count": 0,
-    "html_url": "https://github.com/asmuelle/inward",
-    "pushed_at": "2026-09-16T19:32:32Z"
   },
   {
     "name": "perennial",
